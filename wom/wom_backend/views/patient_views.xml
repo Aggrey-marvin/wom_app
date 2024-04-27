@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="patient_view_tree" model="ir.ui.view">
+        <field name="name">patient.tree</field>
+        <field name="model">patient</field>
+        <field name="arch" type="xml">
+            <tree string="Patients">
+                <field name="name"/>
+                <field name="email"/>
+                <field name="date_of_birth"/>
+                <field name="doctor_id"/>
+                <field name="address" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+    <record id="patient_view_form" model="ir.ui.view">
+        <field name="name">patient.view.form</field>
+        <field name="model">patient</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    
+                </header>
+                <sheet>
+                    <group name="base">
+                        <group name="info_1">
+                            <field name="name"/>
+                            <field name="email"/>
+                            <field name="date_of_birth"/>
+                            <field name="doctor_id"/>
+                            <field name="address" optional="hide"/>
+                        </group>
+                        <group name="info_2">
+                            <field name="profile_picture" widget="image" class="oe_avatar" nolabel="1"
+                                style='padding-left: 600px'/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="patient_action" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="res_model">patient</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There are no patients yet.
+            </p>
+            <p>
+                Click 'New' to create a new Patient
+            </p>
+        </field>
+    </record>
+</odoo>

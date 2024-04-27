@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem name="WOM"
+        id="wom_menu_top"
+        web_icon=""
+        sequence="20"/>
+    <menuitem name="Patients" id="wom_patients_menu" parent="wom_menu_top" 
+        action="wom_backend.patient_action"/>
+</odoo>

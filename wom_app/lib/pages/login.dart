@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wom_app/pages/navigationView.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -70,7 +71,9 @@ class _LoginState extends State<Login> {
                 ),
                 const SizedBox(height: 20.0,),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NavigatorView()));
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromRGBO(80, 194, 201, 1),
                     padding: const EdgeInsets.fromLTRB(40.0, 12.0, 40.0, 12.0),

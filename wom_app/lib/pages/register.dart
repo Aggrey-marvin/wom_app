@@ -33,6 +33,41 @@ class _RegisterState extends State<Register> {
     super.dispose();
   }
 
+  Future createUser(String name, String email, String password,
+      String confirmPassword) async {
+    final orpc = OdooClient('http://10.150.9.55:8069/');
+    const String databaseName = 'wom';
+    const String databaseAccessLogin = 'admin';
+    const String databaseAccessPassword = 'admin';
+    var response;
+
+    try {
+      final session = await orpc.authenticate(
+          databaseName, databaseAccessLogin, databaseAccessPassword);
+      print(session);
+
+      Map<String, dynamic> userValues = {
+        'name': name,
+        'login': email,
+        'password': password,
+        'confirm_password': confirmPassword
+      };
+
+      response = await orpc.callKw(
+        {
+          'model': 'res.users',
+          'method': 'create_user',
+          'args': ['self', userValues],
+          'kwargs': {},
+        },
+      ).timeout(const Duration(seconds: 360));
+      await orpc.destroySession();
+    } on OdooException {
+      print("Access Denied. Wrong email or password.");
+    }
+    return response;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -136,36 +171,14 @@ class _RegisterState extends State<Register> {
                     final password = _password.text;
                     final confirmPassword = _confirmPassword.text;
 
-                    final orpc = OdooClient('http://localhost:8069/');
-                    const String databaseName = 'wom';
-                    const String databaseAccessLogin = 'admin';
-                    const String databaseAccessPassword = 'admin';
-
-                    try {
-                      final session =
-                          await orpc.authenticate(databaseName, databaseAccessLogin, databaseAccessPassword);
-                      print(session);
-                    } on OdooException{
-                      print("Access Denied. Wrong email or password.");
-                    }
-
-                    Map<String, dynamic> userValues = {
-                      'name': name,
-                      'login': email,
-                      'password': password,
-                      'confirm_password': confirmPassword
-                    };
-
-                    var response = await orpc.callKw(
-                      {
-                        'model': 'res.users',
-                        'method': 'create_user',
-                        'args': ['self', userValues],
-                        'kwargs': {},
-                      },
-                    ).timeout(const Duration(seconds: 360));
+                    var response = await createUser(
+                        name, email, password, confirmPassword);
 
                     print(response);
+
+                    if (response == true) {
+                      Navigator.pushNamed(context, '/login');
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromRGBO(80, 194, 201, 1),

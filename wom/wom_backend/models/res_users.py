@@ -8,4 +8,15 @@ class ResUsersInherit(models.Model):
         print(user_values)
         print("")
 
-        return "The thing worked"
+        user_vals = {
+            "name": user_values.get('name'),
+            "login": user_values.get('login'),
+            "password": user_values.get('password')
+        }
+
+        user = self.env['res.users'].create(user_vals)
+
+        if user:
+            return True
+        else:
+            return False

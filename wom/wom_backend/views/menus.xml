@@ -4,6 +4,14 @@
         id="wom_menu_top"
         web_icon=""
         sequence="20"/>
+
     <menuitem name="Patients" id="wom_patients_menu" parent="wom_menu_top" 
         action="wom_backend.patient_action"/>
+    <menuitem name="Exercises" id="wom_exercises_menu" parent="wom_menu_top" 
+    action="wom_backend.exercise_action"/>
+    <menuitem name="Configuration" id="wom_config" parent="wom_menu_top"/>
+    
+    <menuitem name="Parameter Thresholds" id="wom_parameter_thresholds" parent="wom_config" 
+    action="wom_backend.parameter_threshold_action"/>
+
 </odoo>

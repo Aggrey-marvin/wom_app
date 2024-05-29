@@ -35,7 +35,7 @@ class _RegisterState extends State<Register> {
 
   Future createUser(String name, String email, String password,
       String confirmPassword) async {
-    final orpc = OdooClient('http://10.150.9.55:8069/');
+    final orpc = OdooClient('http://10.10.134.10:8069/');
     const String databaseName = 'wom';
     const String databaseAccessLogin = 'admin';
     const String databaseAccessPassword = 'admin';

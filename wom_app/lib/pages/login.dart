@@ -92,7 +92,7 @@ class _LoginState extends State<Login> {
                 const SizedBox(height: 20.0,),
                 ElevatedButton(
                   onPressed: () async {
-                    final orpc = OdooClient('http://10.150.9.55:8069/');
+                    final orpc = OdooClient('http://10.10.134.10:8069/');
                     const String databaseName = 'wom';
                     String databaseAccessLogin = _email.text;
                     String databaseAccessPassword = _password.text;
@@ -104,8 +104,8 @@ class _LoginState extends State<Login> {
 
                     } on OdooException {
                       print("Access Denied. Wrong email or password.");
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NavigatorView()));
                     }
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NavigatorView()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromRGBO(80, 194, 201, 1),

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="parameter_threshold_view_tree" model="ir.ui.view">
+        <field name="name">parameter.threshold.tree</field>
+        <field name="model">parameter.threshold</field>
+        <field name="arch" type="xml">
+            <tree string="Parameter Thresholds">
+                <field name="exercise_id"/>
+                <field name="minimum_angle"/>
+                <field name="maximum_angle"/>
+            </tree>
+        </field>
+    </record>
+    <record id="parameter_threshold_view_form" model="ir.ui.view">
+        <field name="name">parameter.threshold.view.form</field>
+        <field name="model">parameter.threshold</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    
+                </header>
+                <sheet>
+                    <group name="base">
+                        <group name="info_1">
+                            <field name="exercise_id"/>
+                            <field name="minimum_angle"/>
+                            <field name="maximum_angle"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="parameter_threshold_action" model="ir.actions.act_window">
+        <field name="name">Parameter Thresholds</field>
+        <field name="res_model">parameter.threshold</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There are no parameter thresholds yet.
+            </p>
+            <p>
+                Click 'New' to create a new Parameter Threshold
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -2,3 +2,7 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_patient,access_patient,model_patient,base.group_user,1,1,1,1
 
 access_doctor,access_doctor,model_doctor,base.group_user,1,1,1,1
+
+access_exercise,access_exercise,model_exercise,base.group_user,1,1,1,1
+
+access_parameter_threshold,access_parameter_threshold,model_parameter_threshold,base.group_user,1,1,1,1

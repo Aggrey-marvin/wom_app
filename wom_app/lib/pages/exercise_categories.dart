@@ -35,24 +35,26 @@ class _ExerciseCategoryState extends State<ExerciseCategory> {
       ),
     );
 
-    Widget foreground = SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const Center(
-              child: Text(
-                'Categories of Exercises',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
+    Widget foreground = SafeArea(
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const Center(
+                child: Text(
+                  'Categories of Exercises',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
                 ),
               ),
-            ),
-            ...exercises.map((exercise) => ExerciseCard(exercise: exercise)),
-          ],
+              ...exercises.map((exercise) => ExerciseCard(exercise: exercise)),
+            ],
+          ),
         ),
       ),
     );

@@ -4,10 +4,12 @@ class Home extends StatefulWidget {
   const Home({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Home> createState() => _WomHomeState();
 }
 
-class _HomeState extends State<Home> {
+class _WomHomeState extends State<Home> {
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -25,8 +27,116 @@ class _HomeState extends State<Home> {
       ),
     );
 
-    Widget foreground = const Text(
-        'Hello, home page'
+    Widget foreground = SafeArea(
+      child:  Column(
+        children: <Widget> [
+          const SizedBox(height: 16),
+          const CircleAvatar(
+            radius: 30.0,
+            backgroundImage: AssetImage(
+                "assets/images/profile.jpg"
+            ),
+          ),
+          const SizedBox(height: 20.0),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 16.0),
+            decoration: BoxDecoration(
+                color: Colors.white24,
+                borderRadius: BorderRadius.circular(15.0),
+                border: Border.all(
+                  width: 1.0,
+                  color: Colors.black12,
+                )
+            ),
+            child: const Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, 20, 0, 5),
+                  child: Text(
+                    "RANGE OF MOTION",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.0,
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(55.0, 10.0, 0.0, 10.0),
+                      child: Text("5"),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0.0, 10.0, 55.0, 10.0),
+                      child: Text("125"),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(55.0, 0.0, 0.0, 15.0),
+                      child: Text("Min"),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 55.0, 15.0),
+                      child: Text("Max"),
+                    ),
+                  ],
+                ),
+
+              ],
+            ),
+
+          ),
+          const SizedBox(height: 20.0),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 16.0),
+            decoration: BoxDecoration(
+                color: Colors.white24,
+                borderRadius: BorderRadius.circular(15.0),
+                border: Border.all(
+                  width: 1.0,
+                  color: Colors.black12,
+                )
+            ),
+            child: Column(
+              children: [
+                const Padding(
+                  padding: EdgeInsets.fromLTRB(0, 20, 0, 2),
+                  child: Text(
+                    "VERDICT",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "You have a normal functional range of motion",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.green[900],
+                      fontSize: 18,
+                    ),
+
+                  ),
+                ),
+
+              ],
+            ),
+
+          ),
+
+        ],
+
+      ),
     );
 
     return Scaffold(

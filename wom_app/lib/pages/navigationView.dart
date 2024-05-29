@@ -43,11 +43,12 @@ class _NavigatorViewState extends State<NavigatorView> {
     );
 
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: const Text("Wearable Knee Monitor"),
         centerTitle: true,
         elevation: 0.0,
-        backgroundColor: const Color.fromRGBO(196, 196, 196, 1),
+        backgroundColor: Colors.transparent,
         titleTextStyle: TextStyle(
           color: Colors.cyan[900],
           fontSize: 24,
@@ -61,22 +62,22 @@ class _NavigatorViewState extends State<NavigatorView> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: _onItemTap,
         currentIndex: _selectedTab,
-        selectedItemColor: Colors.cyan[700],
+        selectedItemColor: Colors.cyan[900],
         // unselectedItemColor: Colors.black,
         backgroundColor: const Color.fromRGBO(217, 217, 217, 1),
         iconSize: 35,
         items: <BottomNavigationBarItem> [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home, color: _selectedTab == 0 ? Colors.cyan[700]:Colors.black,),
+              icon: Icon(Icons.home, color: _selectedTab == 0 ? Colors.cyan[900]:Colors.black,),
               label: 'Home'
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.fitness_center, color: _selectedTab == 1 ? Colors.cyan[700]:Colors.black,),
+            icon: Icon(Icons.fitness_center, color: _selectedTab == 1 ? Colors.cyan[900]:Colors.black,),
             label: 'Exercise',
 
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person, color: _selectedTab == 2 ? Colors.cyan[700]:Colors.black,),
+              icon: Icon(Icons.person, color: _selectedTab == 2 ? Colors.cyan[900]:Colors.black,),
               label: 'Profile'
           ),
         ],

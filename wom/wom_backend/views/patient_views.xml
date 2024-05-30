@@ -32,7 +32,12 @@
                         </group>
                         <group name="info_2">
                             <field name="profile_picture" widget="image" class="oe_avatar" nolabel="1"
-                                style='padding-left: 600px'/>
+                                style='padding-left: 15px; padding-bottom: 5px'/>
+                            <group>
+                                <field name="gender"/>
+                                <field name="height"/>
+                                <field name="weight"/>
+                            </group>
                         </group>
                     </group>
                 </sheet>

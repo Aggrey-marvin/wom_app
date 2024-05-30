@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wom_app/pages/navigationView.dart';
+import 'package:wom_app/pages/navigation_view.dart';
 import 'package:odoo_rpc/odoo_rpc.dart';
 
 class Login extends StatefulWidget {
@@ -92,7 +92,7 @@ class _LoginState extends State<Login> {
                 const SizedBox(height: 20.0,),
                 ElevatedButton(
                   onPressed: () async {
-                    final orpc = OdooClient('http://192.168.94.43:8069/');
+                    final orpc = OdooClient('http://192.168.214.43:8069/');
                     const String databaseName = 'wom';
                     String databaseAccessLogin = _email.text;
                     String databaseAccessPassword = _password.text;
@@ -100,12 +100,28 @@ class _LoginState extends State<Login> {
                     try {
                       final session = await orpc.authenticate(
                           databaseName, databaseAccessLogin, databaseAccessPassword);
-                      print(session);
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NavigatorView()));
+
+                      Map<String, dynamic> userValues = {
+                        'user_id': session.userId,
+                      };
+
+                      var response = await orpc.callKw(
+                        {
+                          'model': 'patient',
+                          'method': 'search_user',
+                          'args': ['self', userValues],
+                          'kwargs': {},
+                        },
+                      ).timeout(const Duration(seconds: 360));
+
+                      if ((response['success'])) {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NavigatorView(response)));
+                      } else {
+                        await orpc.destroySession();
+                        Navigator.pushNamed(context, '/register');
+                      }
 
                     } on OdooException {
-                      print("Access Denied. Wrong email or password.");
-                      
                       Navigator.pushNamed(context, '/register');
                     }
                   },

@@ -20,6 +20,7 @@
 
     'data': [
         #--------security files--------#  
+        'security/security.xml',
         'security/ir.model.access.csv',
         
         #------data files -------#

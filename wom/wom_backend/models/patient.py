@@ -12,3 +12,26 @@ class Patient(models.Model):
     date_of_birth = fields.Date(string="Date of Birth")
     profile_picture = fields.Binary(string="Profile Picture")
     doctor_id = fields.Many2one("doctor", string="Doctor")
+    gender = fields.Selection(selection=[
+        ('male', 'Male'),
+        ('female', 'Female')
+    ], string="Gender")
+    height = fields.Float(string="Height")
+    weight = fields.Float(string="Weight")
+
+    def search_user(self, vals):
+        patient = self.env['patient'].search([('user_id', '=', vals.get('user_id'))])
+        if patient:
+             patient_dict = {
+                 'success': True,
+                 'data': {'photo': patient.profile_picture,
+                 'gender': patient.gender,
+                 'height': patient.height,
+                 'weight': patient.weight}
+             }
+             return patient_dict
+        else:
+            return {
+                 'success': False,
+                 'data': {}
+             }

@@ -4,9 +4,6 @@ class ResUsersInherit(models.Model):
     _inherit = "res.users"
 
     def create_user(self, user_values):
-        print("")
-        print(user_values)
-        print("")
 
         user_vals = {
             "name": user_values.get('name'),
@@ -15,6 +12,13 @@ class ResUsersInherit(models.Model):
         }
 
         user = self.env['res.users'].create(user_vals)
+        user.write({'groups_id': [(6,0,[self.env['res.groups'].search([('name', '=', 'Patient')]).id])]})
+
+        patient_vals = {
+            "user_id": user.id,
+        }
+
+        self.env['patient'].create(patient_vals)
 
         if user:
             return True

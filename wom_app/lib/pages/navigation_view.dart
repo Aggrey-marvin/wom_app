@@ -4,8 +4,6 @@ import 'package:wom_app/pages/profile_page.dart';
 
 import 'exercise_categories.dart';
 
-
-
 class NavigatorView extends StatefulWidget {
   const NavigatorView({super.key});
 
@@ -14,23 +12,22 @@ class NavigatorView extends StatefulWidget {
 }
 
 class _NavigatorViewState extends State<NavigatorView> {
-
   PageController pageController = PageController();
 
-  static const List<Widget> _pages = <Widget> [
+  static const List<Widget> _pages = <Widget>[
     Home(),
     ExerciseCategory(),
     Profile(),
   ];
 
   int _selectedTab = 0;
-  _changePage(int index){
-    setState((){
+  _changePage(int index) {
+    setState(() {
       _selectedTab = index;
     });
   }
 
-  void _onItemTap(int selectedItems){
+  void _onItemTap(int selectedItems) {
     pageController.jumpToPage(selectedItems);
   }
 
@@ -66,24 +63,28 @@ class _NavigatorViewState extends State<NavigatorView> {
         // unselectedItemColor: Colors.black,
         backgroundColor: const Color.fromRGBO(217, 217, 217, 1),
         iconSize: 35,
-        items: <BottomNavigationBarItem> [
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(Icons.home, color: _selectedTab == 0 ? Colors.cyan[900]:Colors.black,),
-              label: 'Home'
-          ),
+              icon: Icon(
+                Icons.home,
+                color: _selectedTab == 0 ? Colors.cyan[900] : Colors.black,
+              ),
+              label: 'Home'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.fitness_center, color: _selectedTab == 1 ? Colors.cyan[900]:Colors.black,),
+            icon: Icon(
+              Icons.fitness_center,
+              color: _selectedTab == 1 ? Colors.cyan[900] : Colors.black,
+            ),
             label: 'Exercise',
-
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person, color: _selectedTab == 2 ? Colors.cyan[900]:Colors.black,),
-              label: 'Profile'
-          ),
+              icon: Icon(
+                Icons.person,
+                color: _selectedTab == 2 ? Colors.cyan[900] : Colors.black,
+              ),
+              label: 'Profile'),
         ],
-
       ),
     );
   }
-
 }

@@ -15,9 +15,9 @@ void main() => runApp(MaterialApp(
   routes: {
     '/login': (context) => const Login(),
     '/register': (context) => const Register(),
-    'navigator_view' : (context) => const NavigatorView(),
-    '/home': (context) => const Home(),
-    '/profile' : (context) => const Profile(),
+    'navigator_view' : (context) => const NavigatorView(response: {},),
+    '/home': (context) => const Home(image: {},),
+    '/profile' : (context) => const Profile(response: {},),
     '/profile_edit' : (context) => const EditProfile(),
     '/exercise_categories' : (context) => const ExerciseCategory(),
     '/beginner' : (context) => const Beginner(),

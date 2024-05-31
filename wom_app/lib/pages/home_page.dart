@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  final image;
+
+  const Home({super.key, required this.image});
 
   @override
   State<Home> createState() => _WomHomeState();
 }
 
 class _WomHomeState extends State<Home> {
-
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-
     // Get the screen dimensions
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
@@ -23,19 +27,18 @@ class _WomHomeState extends State<Home> {
       height: screenHeight,
       child: Image.asset(
         'assets/images/backgroundShape.png',
-        fit: BoxFit.cover, // Use BoxFit.cover to ensure the image covers the entire screen
+        fit: BoxFit
+            .cover, // Use BoxFit.cover to ensure the image covers the entire screen
       ),
     );
 
     Widget foreground = SafeArea(
-      child:  Column(
-        children: <Widget> [
+      child: Column(
+        children: <Widget>[
           const SizedBox(height: 16),
-          const CircleAvatar(
+          CircleAvatar(
             radius: 30.0,
-            backgroundImage: AssetImage(
-                "assets/images/profile.jpg"
-            ),
+            backgroundImage: MemoryImage(widget.image),
           ),
           const SizedBox(height: 20.0),
           Container(
@@ -46,8 +49,7 @@ class _WomHomeState extends State<Home> {
                 border: Border.all(
                   width: 1.0,
                   color: Colors.black12,
-                )
-            ),
+                )),
             child: const Column(
               children: [
                 Padding(
@@ -87,10 +89,8 @@ class _WomHomeState extends State<Home> {
                     ),
                   ],
                 ),
-
               ],
             ),
-
           ),
           const SizedBox(height: 20.0),
           Container(
@@ -101,8 +101,7 @@ class _WomHomeState extends State<Home> {
                 border: Border.all(
                   width: 1.0,
                   color: Colors.black12,
-                )
-            ),
+                )),
             child: Column(
               children: [
                 const Padding(
@@ -125,17 +124,12 @@ class _WomHomeState extends State<Home> {
                       color: Colors.green[900],
                       fontSize: 18,
                     ),
-
                   ),
                 ),
-
               ],
             ),
-
           ),
-
         ],
-
       ),
     );
 

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'dart:convert'; // For base64 decoding
+import 'dart:typed_data';
 
 class Profile extends StatefulWidget {
-  const Profile({super.key});
+  final response;
+
+  const Profile({super.key, required this.response});
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -20,7 +24,8 @@ class _ProfileState extends State<Profile> {
       height: screenHeight,
       child: Image.asset(
         'assets/images/backgroundShape.png',
-        fit: BoxFit.cover, // Use BoxFit.cover to ensure the image covers the entire screen
+        fit: BoxFit
+            .cover, // Use BoxFit.cover to ensure the image covers the entire screen
       ),
     );
 
@@ -37,20 +42,20 @@ class _ProfileState extends State<Profile> {
                   border: Border.all(
                     width: 1.0,
                     color: Colors.black12,
-                  )
-              ),
+                  )),
               child: Center(
                 child: Column(
                   children: <Widget>[
-                    const SizedBox(height: 15.0,),
-                    const CircleAvatar(
-                      radius: 45.0,
-                      backgroundImage: AssetImage(
-                          "assets/images/profile.jpg"
-                      ),
+                    const SizedBox(
+                      height: 15.0,
                     ),
-                    const SizedBox(height: 10.0,),
-
+                    CircleAvatar(
+                      radius: 45.0,
+                      backgroundImage: MemoryImage(base64Decode(widget.response['data']['photo'] as String)),
+                    ),
+                    const SizedBox(
+                      height: 10.0,
+                    ),
                     Text(
                       "Kojo Christine",
                       style: TextStyle(
@@ -59,19 +64,20 @@ class _ProfileState extends State<Profile> {
                         color: Colors.cyan[900],
                       ),
                     ),
-
-                    const SizedBox(height: 10.0,),
+                    const SizedBox(
+                      height: 10.0,
+                    ),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.pushNamed(context, "/profile_edit");
                       },
                       style: ElevatedButton.styleFrom(
                           elevation: 0,
-                          backgroundColor: const Color.fromRGBO(80, 194, 201, 1),
+                          backgroundColor:
+                              const Color.fromRGBO(80, 194, 201, 1),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5.0),
-                          )
-                      ),
+                          )),
                       child: const Text(
                         "Edit Profile",
                         style: TextStyle(
@@ -85,7 +91,9 @@ class _ProfileState extends State<Profile> {
                 ),
               ),
             ),
-            const SizedBox(height: 10.0,),
+            const SizedBox(
+              height: 10.0,
+            ),
             const Text(
               "Personal Details",
               style: TextStyle(
@@ -102,10 +110,9 @@ class _ProfileState extends State<Profile> {
                   border: Border.all(
                     width: 1.0,
                     color: Colors.black12,
-                  )
-              ),
+                  )),
               child: const Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 24.0),
+                padding: EdgeInsets.symmetric(horizontal: 24.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -177,23 +184,20 @@ class _ProfileState extends State<Profile> {
                         ),
                       ],
                     ),
-
                   ],
                 ),
               ),
             ),
-
           ],
         ),
       ),
     );
     return Scaffold(
         body: Stack(
-          children: [
-            background,
-            foreground,
-          ],
-        )
-    );
+      children: [
+        background,
+        foreground,
+      ],
+    ));
   }
 }

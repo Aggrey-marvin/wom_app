@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:wom_app/pages/home_page.dart';
 import 'package:wom_app/pages/profile_page.dart';
+import 'dart:convert'; // For base64 decoding
+import 'dart:typed_data';
 
 import 'exercise_categories.dart';
 
 class NavigatorView extends StatefulWidget {
-  const NavigatorView({super.key});
+  final response;
+  const NavigatorView({super.key, required this.response});
 
   @override
   State<NavigatorView> createState() => _NavigatorViewState();
@@ -13,12 +16,21 @@ class NavigatorView extends StatefulWidget {
 
 class _NavigatorViewState extends State<NavigatorView> {
   PageController pageController = PageController();
+  late List<Widget> _pages;
 
-  static const List<Widget> _pages = <Widget>[
-    Home(),
-    ExerciseCategory(),
-    Profile(),
-  ];
+  @override
+  void initState() {
+    super.initState();
+    String base64Image = widget.response['data']['photo'] as String;
+    Uint8List imageBytes = base64Decode(base64Image);
+    _pages = <Widget>[
+      Home(
+        image: imageBytes,
+      ),
+      const ExerciseCategory(),
+      Profile(response: widget.response,),
+    ];
+  }
 
   int _selectedTab = 0;
   _changePage(int index) {

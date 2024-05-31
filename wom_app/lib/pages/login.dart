@@ -92,7 +92,7 @@ class _LoginState extends State<Login> {
                 const SizedBox(height: 20.0,),
                 ElevatedButton(
                   onPressed: () async {
-                    final orpc = OdooClient('http://192.168.214.43:8069/');
+                    final orpc = OdooClient('http://192.168.236.43:8069/');
                     const String databaseName = 'wom';
                     String databaseAccessLogin = _email.text;
                     String databaseAccessPassword = _password.text;
@@ -115,7 +115,7 @@ class _LoginState extends State<Login> {
                       ).timeout(const Duration(seconds: 360));
 
                       if ((response['success'])) {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NavigatorView(response)));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  NavigatorView(response: response,)));
                       } else {
                         await orpc.destroySession();
                         Navigator.pushNamed(context, '/register');

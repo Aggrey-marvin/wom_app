@@ -8,7 +8,8 @@ import 'exercise_categories.dart';
 
 class NavigatorView extends StatefulWidget {
   final response;
-  const NavigatorView({super.key, required this.response});
+  final sessionData;
+  const NavigatorView({super.key, required this.response, required this.sessionData});
 
   @override
   State<NavigatorView> createState() => _NavigatorViewState();
@@ -28,7 +29,9 @@ class _NavigatorViewState extends State<NavigatorView> {
         image: imageBytes,
       ),
       const ExerciseCategory(),
-      Profile(response: widget.response,),
+      Profile(
+        response: widget.response, sessionData: widget.sessionData,
+      ),
     ];
   }
 

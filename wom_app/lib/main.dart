@@ -15,10 +15,10 @@ void main() => runApp(MaterialApp(
   routes: {
     '/login': (context) => const Login(),
     '/register': (context) => const Register(),
-    'navigator_view' : (context) => const NavigatorView(response: {},),
+    'navigator_view' : (context) => const NavigatorView(response: {}, sessionData: {},),
     '/home': (context) => const Home(image: {},),
-    '/profile' : (context) => const Profile(response: {},),
-    '/profile_edit' : (context) => const EditProfile(),
+    '/profile' : (context) => const Profile(response: {}, sessionData: {},),
+    '/profile_edit' : (context) => const EditProfile(response: {}, sessionData:  {},),
     '/exercise_categories' : (context) => const ExerciseCategory(),
     '/beginner' : (context) => const Beginner(),
     '/intermediate' : (context) => const Intermediate(),

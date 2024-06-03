@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'dart:convert'; // For base64 decoding
-import 'dart:typed_data';
+import 'dart:convert';
+import 'package:wom_app/pages/profile_edit.dart';
 
 class Profile extends StatefulWidget {
   final response;
+  final sessionData;
 
-  const Profile({super.key, required this.response});
+  const Profile({super.key, required this.response, required this.sessionData});
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -51,13 +52,14 @@ class _ProfileState extends State<Profile> {
                     ),
                     CircleAvatar(
                       radius: 45.0,
-                      backgroundImage: MemoryImage(base64Decode(widget.response['data']['photo'] as String)),
+                      backgroundImage: MemoryImage(base64Decode(
+                          widget.response['data']['photo'] as String)),
                     ),
                     const SizedBox(
                       height: 10.0,
                     ),
                     Text(
-                      "Kojo Christine",
+                      widget.response['data']['name'],
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -69,7 +71,11 @@ class _ProfileState extends State<Profile> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, "/profile_edit");
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => EditProfile(
+                                  response: widget.response,
+                                  sessionData: widget.sessionData,
+                                )));
                       },
                       style: ElevatedButton.styleFrom(
                           elevation: 0,
@@ -111,14 +117,14 @@ class _ProfileState extends State<Profile> {
                     width: 1.0,
                     color: Colors.black12,
                   )),
-              child: const Padding(
+              child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Row(
                       children: [
-                        Text(
+                        const Text(
                           "Email :",
                           style: TextStyle(
                             fontSize: 18,
@@ -126,8 +132,8 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                         Text(
-                          "  christine@gmail.com",
-                          style: TextStyle(
+                          "  ${widget.sessionData.userLogin}",
+                          style: const TextStyle(
                             fontSize: 18,
                           ),
                         ),
@@ -135,7 +141,7 @@ class _ProfileState extends State<Profile> {
                     ),
                     Row(
                       children: [
-                        Text(
+                        const Text(
                           "Gender :",
                           style: TextStyle(
                             fontSize: 18,
@@ -143,8 +149,8 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                         Text(
-                          "  Female",
-                          style: TextStyle(
+                          "  ${widget.response['data']['gender']}",
+                          style: const TextStyle(
                             fontSize: 18,
                           ),
                         ),
@@ -152,7 +158,7 @@ class _ProfileState extends State<Profile> {
                     ),
                     Row(
                       children: [
-                        Text(
+                        const Text(
                           "Height :",
                           style: TextStyle(
                             fontSize: 18,
@@ -160,8 +166,8 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                         Text(
-                          "  189 cm",
-                          style: TextStyle(
+                          "  ${widget.response['data']['height']}",
+                          style: const TextStyle(
                             fontSize: 18,
                           ),
                         ),
@@ -169,7 +175,7 @@ class _ProfileState extends State<Profile> {
                     ),
                     Row(
                       children: [
-                        Text(
+                        const Text(
                           "Weight :",
                           style: TextStyle(
                             fontSize: 18,
@@ -177,8 +183,8 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                         Text(
-                          "  82 Kgs",
-                          style: TextStyle(
+                          "  ${widget.response['data']['weight']}",
+                          style: const TextStyle(
                             fontSize: 18,
                           ),
                         ),

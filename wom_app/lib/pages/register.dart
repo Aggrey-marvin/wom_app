@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:odoo_rpc/odoo_rpc.dart';
 
 class Register extends StatefulWidget {
@@ -35,7 +34,7 @@ class _RegisterState extends State<Register> {
 
   Future createUser(String name, String email, String password,
       String confirmPassword) async {
-    final orpc = OdooClient('http://192.168.236.43:8069/');
+    final orpc = OdooClient('http://192.168.18.43:8069/');
     const String databaseName = 'wom';
     const String databaseAccessLogin = 'admin';
     const String databaseAccessPassword = 'admin';
@@ -63,6 +62,7 @@ class _RegisterState extends State<Register> {
       ).timeout(const Duration(seconds: 360));
       await orpc.destroySession();
     } on OdooException {
+      response = false;
       print("Access Denied. Wrong email or password.");
     }
     return response;

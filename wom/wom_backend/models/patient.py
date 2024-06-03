@@ -24,10 +24,14 @@ class Patient(models.Model):
         if patient:
              patient_dict = {
                  'success': True,
-                 'data': {'photo': patient.profile_picture,
-                 'gender': patient.gender,
-                 'height': patient.height,
-                 'weight': patient.weight}
+                 'data': {
+                    'photo': patient.profile_picture,
+                    'gender': str(patient.gender).capitalize(),
+                    'height': str(patient.height),
+                    'weight': str(patient.weight),
+                    'name': patient.user_id.name,
+                    'contact': str(patient.user_id.phone)
+                 }
              }
              return patient_dict
         else:
@@ -35,3 +39,31 @@ class Patient(models.Model):
                  'success': False,
                  'data': {}
              }
+
+    def edit_user_details(self, vals):
+        patient = self.env['patient'].search([('user_id', '=', int(vals['user_id']))])
+        updated_patient_values = {
+            'height': vals.get('height'),
+            'weight': vals.get('weight'),
+        }
+
+        updated_user_values = {
+            'phone': vals.get('contact'),
+            'login': vals.get('email'),
+        }
+
+        patient.sudo().write(updated_patient_values)
+        patient.sudo().user_id.write(updated_user_values)
+
+        patient_dict = {
+            'success': True,
+            'data': {
+                'photo': patient.profile_picture,
+                'gender': str(patient.gender).capitalize(),
+                'height': str(patient.height),
+                'weight': str(patient.weight),
+                'name': patient.user_id.name,
+                'contact': str(patient.user_id.phone)
+            }
+        }
+        return patient_dict

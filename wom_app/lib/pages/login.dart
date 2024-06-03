@@ -26,7 +26,7 @@ class _LoginState extends State<Login> {
     _password.dispose();
     super.dispose();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,34 +42,39 @@ class _LoginState extends State<Login> {
       ),
       body: Container(
         height: double.infinity,
-        decoration:const BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/backgroundShape.png"),
             fit: BoxFit.cover,
           ),
           color: Color.fromRGBO(196, 196, 196, 1),
-        ) ,
+        ),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget> [
+              children: <Widget>[
                 const Text(
                     style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.w400,
                       color: Colors.black87,
                     ),
-                    'Welcome Back!'
+                    'Welcome Back!'),
+                const SizedBox(
+                  height: 20.0,
                 ),
-                const SizedBox(height: 20.0,),
                 const Image(
-                  image: AssetImage('assets/images/logo.png', ),
+                  image: AssetImage(
+                    'assets/images/logo.png',
+                  ),
                   width: 500,
                   height: 250,
                 ),
-                const SizedBox(height: 20.0,),
+                const SizedBox(
+                  height: 20.0,
+                ),
                 TextField(
                   controller: _email,
                   decoration: InputDecoration(
@@ -79,7 +84,9 @@ class _LoginState extends State<Login> {
                     hintText: 'Enter your email',
                   ),
                 ),
-                const SizedBox(height: 20.0,),
+                const SizedBox(
+                  height: 20.0,
+                ),
                 TextField(
                   controller: _password,
                   decoration: InputDecoration(
@@ -89,17 +96,23 @@ class _LoginState extends State<Login> {
                     hintText: 'Create a password',
                   ),
                 ),
-                const SizedBox(height: 20.0,),
+                const SizedBox(
+                  height: 20.0,
+                ),
                 ElevatedButton(
                   onPressed: () async {
-                    final orpc = OdooClient('http://192.168.236.43:8069/');
+                    final orpc = OdooClient('http://192.168.18.43:8069/');
                     const String databaseName = 'wom';
                     String databaseAccessLogin = _email.text;
                     String databaseAccessPassword = _password.text;
 
                     try {
-                      final session = await orpc.authenticate(
-                          databaseName, databaseAccessLogin, databaseAccessPassword);
+                      final session = await orpc.authenticate(databaseName,
+                          databaseAccessLogin, databaseAccessPassword);
+
+                      print("**************");
+                      print(session);
+                      print("**************");
 
                       Map<String, dynamic> userValues = {
                         'user_id': session.userId,
@@ -115,12 +128,16 @@ class _LoginState extends State<Login> {
                       ).timeout(const Duration(seconds: 360));
 
                       if ((response['success'])) {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  NavigatorView(response: response,)));
+                        response['password'] = databaseAccessPassword;
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => NavigatorView(
+                                  response: response,
+                                  sessionData: session,
+                                )));
                       } else {
                         await orpc.destroySession();
                         Navigator.pushNamed(context, '/register');
                       }
-
                     } on OdooException {
                       Navigator.pushNamed(context, '/register');
                     }
@@ -131,17 +148,18 @@ class _LoginState extends State<Login> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
                     ),
-                  ) ,
+                  ),
                   child: const Text(
                       style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.w500,
                         color: Colors.black87,
                       ),
-                      'Login'
-                  ),
+                      'Login'),
                 ),
-                const SizedBox(height: 20.0,),
+                const SizedBox(
+                  height: 20.0,
+                ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(55, 8, 0, 0),
                   child: Row(
@@ -152,11 +170,12 @@ class _LoginState extends State<Login> {
                               fontSize: 15.0,
                               fontStyle: FontStyle.italic,
                             ),
-                            'If new, Create an account ? '
+                            'If new, Create an account ? '),
+                        const SizedBox(
+                          width: 20.0,
                         ),
-                        const SizedBox(width: 20.0,),
                         InkWell(
-                          onTap: ( ){
+                          onTap: () {
                             Navigator.pushNamed(context, '/register');
                           },
                           child: const Text(
@@ -167,16 +186,13 @@ class _LoginState extends State<Login> {
                             ),
                           ),
                         ),
-                      ]
-
-                  ),
+                      ]),
                 ),
               ],
             ),
           ),
         ),
       ),
-
     );
   }
 }

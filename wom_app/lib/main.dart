@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wom_app/pages/exercise_categories.dart';
-import 'package:wom_app/pages/exercises/advanced_exercise.dart';
-import 'package:wom_app/pages/exercises/beginner_exercise.dart';
-import 'package:wom_app/pages/exercises/intermediate_exercise.dart';
 import 'package:wom_app/pages/home_page.dart';
 import 'package:wom_app/pages/login.dart';
 import 'package:wom_app/pages/navigationView.dart';
@@ -19,10 +15,6 @@ void main() => runApp(MaterialApp(
     '/home': (context) => const Home(),
     '/profile' : (context) => const Profile(),
     '/profile_edit' : (context) => const EditProfile(),
-    '/exercise_categories' : (context) => const ExerciseCategory(),
-    '/beginner' : (context) => const Beginner(),
-    '/intermediate' : (context) => const Intermediate(),
-    '/advanced' : (context) => const Advanced(),
 
   },
 ));

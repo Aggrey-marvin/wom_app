@@ -41,8 +41,8 @@ class _EditProfileState extends State<EditProfile> {
 
   Future editUserDetails(String height, String email, String weight,
       String contact, String password) async {
-    final orpc = OdooClient('http://192.168.18.43:8069/');
-    String databaseName = "wom";
+    final orpc = OdooClient('http://138.201.186.0:8069/');
+    String databaseName = "wom-live";
     var response;
 
     try {

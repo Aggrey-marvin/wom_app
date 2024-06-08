@@ -101,8 +101,8 @@ class _LoginState extends State<Login> {
                 ),
                 ElevatedButton(
                   onPressed: () async {
-                    final orpc = OdooClient('http://192.168.18.43:8069/');
-                    const String databaseName = 'wom';
+                    final orpc = OdooClient('http://138.201.186.0:8069/');
+                    const String databaseName = 'wom-live';
                     String databaseAccessLogin = _email.text;
                     String databaseAccessPassword = _password.text;
 

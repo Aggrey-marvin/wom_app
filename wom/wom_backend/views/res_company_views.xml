@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="via_efris_client.ura_no_vat_view_company_form_inherited" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='currency_id']" position="after">
-                <field name="profile_picture" widget="image" class="oe_avatar" nolabel="1"
+                <field name="default_image" widget="image" class="oe_avatar" nolabel="1"
                                 style='padding-left: 15px; padding-bottom: 5px'/>
             </xpath>
         </field>

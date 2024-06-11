@@ -25,7 +25,7 @@ class Patient(models.Model):
              patient_dict = {
                  'success': True,
                  'data': {
-                    'photo': patient.profile_picture,
+                    'photo': patient.profile_picture if patient.profile_picture else self.env.company.default_image,
                     'gender': str(patient.gender).capitalize(),
                     'height': str(patient.height),
                     'weight': str(patient.weight),

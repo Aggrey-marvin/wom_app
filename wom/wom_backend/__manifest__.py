@@ -33,6 +33,7 @@
         'views/patient_views.xml',
         'views/exercise_views.xml',
         'views/parameter_threshold_views.xml',
+        'views/res_company_views.xml',
         'views/menus.xml',
         
     ],

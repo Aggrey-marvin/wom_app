@@ -128,9 +128,6 @@ class _LoginState extends State<Login> {
                       final session = await orpc.authenticate(databaseName,
                           databaseAccessLogin, databaseAccessPassword);
 
-                      print("**************");
-                      print(session);
-                      print("**************");
 
                       Map<String, dynamic> userValues = {
                         'user_id': session.userId,
@@ -144,6 +141,11 @@ class _LoginState extends State<Login> {
                           'kwargs': {},
                         },
                       ).timeout(const Duration(seconds: 360));
+                      
+                      print("**************");
+                      print(session);
+                      print(response);
+                      print("**************");
 
                       if ((response['success'])) {
                         response['password'] = databaseAccessPassword;

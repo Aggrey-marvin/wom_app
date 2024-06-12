@@ -22,18 +22,31 @@ class Patient(models.Model):
     def search_user(self, vals):
         patient = self.env['patient'].search([('user_id', '=', vals.get('user_id'))])
         if patient:
-             patient_dict = {
-                 'success': True,
-                 'data': {
-                    'photo': patient.profile_picture,
-                    'gender': str(patient.gender).capitalize(),
-                    'height': str(patient.height),
-                    'weight': str(patient.weight),
-                    'name': patient.user_id.name,
-                    'contact': str(patient.user_id.phone)
-                 }
-             }
-             return patient_dict
+            patient_dict = {
+                'success': True,
+                'data': {
+                'photo': patient.profile_picture if patient.profile_picture else self.env.company.default_image,
+                'gender': str(patient.gender).capitalize(),
+                'height': str(patient.height),
+                'weight': str(patient.weight),
+                'name': patient.user_id.name,
+                'contact': str(patient.user_id.phone)
+                }
+            }
+
+            exercises = self.env['exercise'].search([])
+            exercise_list = []
+
+            for exercise in exercises:
+                exercise_list.append({
+                    'name': exercise.name,
+                    'expected_duration': exercise.expected_duration,
+                    'exercise_gif': exercise.exercise_gif,
+                    'exercise_image': exercise.exercise_image,
+                })
+
+            patient_dict['exercises'] = exercise_list
+            return patient_dict
         else:
             return {
                  'success': False,

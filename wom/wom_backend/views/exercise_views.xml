@@ -7,6 +7,7 @@
             <tree string="Exercises">
                 <field name="name"/>
                 <field name="expected_duration"/>
+                <field name="exercise_gif"/>
             </tree>
         </field>
     </record>
@@ -23,6 +24,13 @@
                         <group name="info_1">
                             <field name="name"/>
                             <field name="expected_duration"/>
+                        </group>
+                        <group name="info_2">
+                            <field name="exercise_image" widget="image" class="oe_avatar" nolabel="1"
+                                style='padding-left: 15px; padding-bottom: 5px'/>
+                            <group>
+                                <field name="exercise_gif"/>
+                            </group>
                         </group>
                     </group>
                 </sheet>

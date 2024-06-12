@@ -6,7 +6,6 @@
         <field name="arch" type="xml">
             <tree string="Exercises">
                 <field name="name"/>
-                <field name="thumbnail"/>
                 <field name="expected_duration"/>
                 <field name="exercise_gif"/>
             </tree>
@@ -24,7 +23,6 @@
                     <group name="base">
                         <group name="info_1">
                             <field name="name"/>
-                            <field name="thumbnail"/>
                             <field name="expected_duration"/>
                         </group>
                         <group name="info_2">

@@ -12,6 +12,7 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   late final TextEditingController _email;
   late final TextEditingController _password;
+  bool passwordVisible = true;
 
   @override
   void initState() {
@@ -29,6 +30,7 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Wearable Knee Monitor"),
@@ -94,7 +96,23 @@ class _LoginState extends State<Login> {
                       borderRadius: BorderRadius.circular(25.0),
                     ),
                     hintText: 'Create a password',
+                    suffixIcon: IconButton(
+                      icon: Icon(passwordVisible
+                            ? Icons.visibility
+                            : Icons.visibility_off
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          passwordVisible = !passwordVisible;
+                        });
+                      },
+
+                    ),
                   ),
+                  obscureText: passwordVisible,
+                  keyboardType: TextInputType.visiblePassword,
+                  textInputAction: TextInputAction.done,
+
                 ),
                 const SizedBox(
                   height: 20.0,
@@ -129,6 +147,7 @@ class _LoginState extends State<Login> {
 
                       if ((response['success'])) {
                         response['password'] = databaseAccessPassword;
+                        if(!context.mounted) return;
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => NavigatorView(
                                   response: response,
@@ -136,10 +155,19 @@ class _LoginState extends State<Login> {
                                 )));
                       } else {
                         await orpc.destroySession();
-                        Navigator.pushNamed(context, '/register');
+                        if(!context.mounted) return;
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Failed to log in. Please check your credentials.'),
+                          )
+                        );
                       }
                     } on OdooException {
-                      Navigator.pushNamed(context, '/register');
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Failed to log in. Please check your credentials.'),
+                          )
+                      );
                     }
                   },
                   style: ElevatedButton.styleFrom(
@@ -176,7 +204,7 @@ class _LoginState extends State<Login> {
                         ),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/register');
+                            Navigator.pushReplacementNamed(context, '/register');
                           },
                           child: const Text(
                             'Register',

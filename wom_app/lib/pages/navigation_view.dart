@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:wom_app/pages/exercise/exercise_item.dart';
+import 'package:wom_app/pages/exercise/exercise_list.dart';
 import 'package:wom_app/pages/home_page.dart';
 import 'package:wom_app/pages/profile_page.dart';
 import 'dart:convert'; // For base64 decoding
 import 'dart:typed_data';
 
-import 'exercise_categories.dart';
 
 class NavigatorView extends StatefulWidget {
   final response;
@@ -22,17 +23,24 @@ class _NavigatorViewState extends State<NavigatorView> {
   @override
   void initState() {
     super.initState();
-    String base64Image = widget.response['data']['photo'] as String;
-    Uint8List imageBytes = base64Decode(base64Image);
-    _pages = <Widget>[
-      Home(
-        image: imageBytes,
-      ),
-      const ExerciseCategory(),
-      Profile(
-        response: widget.response, sessionData: widget.sessionData,
-      ),
-    ];
+    // try {`
+      String base64Image = widget.response['data']['photo'] as String;
+      Uint8List imageBytes = base64Decode(base64Image);
+
+      _pages = <Widget>[
+        Home(
+          image: imageBytes,
+        ),
+        ExerciseView(exercises: widget.response['exercises']),
+        Profile(
+          response: widget.response, sessionData: widget.sessionData,
+        ),
+      ];
+    // } catch (e) {
+    //   print("Failed to decode image: $e");
+    //   // Handle the error appropriately
+    // }
+
   }
 
   int _selectedTab = 0;

@@ -13,6 +13,8 @@ class _RegisterState extends State<Register> {
   late final TextEditingController _email;
   late final TextEditingController _password;
   late final TextEditingController _confirmPassword;
+  bool passwordVisibleOne = true;
+  bool passwordVisibleTwo = true;
 
   @override
   void initState() {
@@ -147,7 +149,22 @@ class _RegisterState extends State<Register> {
                       borderRadius: BorderRadius.circular(25.0),
                     ),
                     hintText: 'Password',
+                    suffixIcon: IconButton(
+                      icon: Icon(passwordVisibleOne
+                          ? Icons.visibility
+                          : Icons.visibility_off
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          passwordVisibleOne = !passwordVisibleOne;
+                        });
+                      },
+
+                    ),
                   ),
+                  obscureText: passwordVisibleOne,
+                  keyboardType: TextInputType.visiblePassword,
+                  textInputAction: TextInputAction.done,
                 ),
                 const SizedBox(
                   height: 20.0,
@@ -159,8 +176,24 @@ class _RegisterState extends State<Register> {
                       borderRadius: BorderRadius.circular(25.0),
                     ),
                     hintText: 'Confirm password',
+                    suffixIcon: IconButton(
+                      icon: Icon(passwordVisibleTwo
+                          ? Icons.visibility
+                          : Icons.visibility_off
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          passwordVisibleTwo = !passwordVisibleTwo;
+                        });
+                      },
+
+                    ),
                   ),
+                  obscureText: passwordVisibleTwo,
+                  keyboardType: TextInputType.visiblePassword,
+                  textInputAction: TextInputAction.done,
                 ),
+
                 const SizedBox(
                   height: 20.0,
                 ),
@@ -175,9 +208,27 @@ class _RegisterState extends State<Register> {
                         name, email, password, confirmPassword);
 
                     print(response);
-
+                    if(!context.mounted) return;
                     if (response == true) {
-                      Navigator.pushNamed(context, '/login');
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            duration: const Duration(minutes: 3),
+                            content: const Text('Successfully registered. Please login!'),
+                            action: SnackBarAction(
+                                label: 'Login',
+                                onPressed: () {
+                                  Navigator.pushReplacementNamed(context, '/login');
+                                },
+                            ),
+                          )
+                      );
+
+                    } else{
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Failed to register. Try again'),
+                          )
+                      );
                     }
                   },
                   style: ElevatedButton.styleFrom(
@@ -214,7 +265,7 @@ class _RegisterState extends State<Register> {
                         ),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/login');
+                            Navigator.pushReplacementNamed(context, '/login');
                           },
                           child: const Text(
                             'Login',

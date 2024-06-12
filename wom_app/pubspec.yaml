@@ -37,6 +37,12 @@ dependencies:
   cupertino_icons: ^1.0.6
   url_launcher: ^6.2.5
   odoo_rpc: ^0.5.4
+  permission_handler: ^11.3.1
+  flutter_blue_plus: ^1.32.7
+  video_player: ^2.8.7
+  syncfusion_flutter_gauges: ^26.1.35
+  fl_chart: ^0.68.0
+  transparent_image: ^2.0.1
 
 dev_dependencies:
   flutter_test:

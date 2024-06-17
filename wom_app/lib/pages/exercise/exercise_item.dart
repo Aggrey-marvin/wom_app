@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'dart:convert'; // For base64 decoding
+import 'dart:typed_data';
 
 
 class ExerciseItem extends StatelessWidget {
-  const ExerciseItem({super.key, required this.exercise, required this.onSelectExercise});
+  const ExerciseItem({super.key,  this.exercise, this.onSelectExercise});
 
-  final exercise;
-  final void Function(Exercise exercise) onSelectExercise;
+  final dynamic exercise;
+  final void Function(dynamic exercise) ? onSelectExercise;
 
   @override
   Widget build(BuildContext context) {
+    String base64Image = exercise['exercise_image'] as String;
+    Uint8List imageBytes = base64Decode(base64Image);
+
     return Card(
       margin: const EdgeInsets.all(8),
       clipBehavior: Clip.hardEdge,
@@ -19,13 +24,13 @@ class ExerciseItem extends StatelessWidget {
       elevation: 2,
       child: InkWell(
         onTap: (){
-          onSelectExercise(exercise);
+          onSelectExercise!(exercise);
         },
         child: Stack(
           children: [
             FadeInImage(
               placeholder: MemoryImage(kTransparentImage),
-              image:  AssetImage(exercise.thumbnail),
+              image:  MemoryImage(imageBytes),
               fit: BoxFit.cover,
               height: 200,
               width: double.infinity,
@@ -40,7 +45,7 @@ class ExerciseItem extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      exercise.name,
+                      exercise['name'],
                       maxLines: 2,
                       textAlign: TextAlign.center,
                       softWrap: true,

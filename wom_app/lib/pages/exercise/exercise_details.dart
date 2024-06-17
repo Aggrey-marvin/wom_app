@@ -4,9 +4,11 @@ import 'package:wom_app/pages/exercise/video_player.dart';
 
 
 class ExerciseDetails extends StatefulWidget {
-  const ExerciseDetails({super.key, required this.exercise});
+  const ExerciseDetails({super.key, this.exercise, this.response, this.sessionData});
 
-  final exercise;
+  final dynamic exercise;
+  final dynamic response;
+  final dynamic sessionData;
 
   @override
   State<ExerciseDetails> createState() => _ExerciseDetailsState();
@@ -19,7 +21,7 @@ class _ExerciseDetailsState extends State<ExerciseDetails> {
   @override
   void initState(){
     super.initState();
-    controller = VideoPlayerController.asset(widget.exercise.giff);
+    controller = VideoPlayerController.networkUrl(Uri.parse(widget.exercise['exercise_gif']));
     controller.addListener(() => setState(() {}));
     controller.setLooping(true);
     controller.initialize().then((_) => controller.play());
@@ -34,9 +36,6 @@ class _ExerciseDetailsState extends State<ExerciseDetails> {
   @override
   Widget build(BuildContext context) {
 
-    // Get the screen dimensions
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
         extendBodyBehindAppBar: true,
@@ -54,7 +53,7 @@ class _ExerciseDetailsState extends State<ExerciseDetails> {
       body:Stack(
           children: [
             // background,
-            VideoPlayerWidget(controller: controller, exercise: widget.exercise, ),
+            VideoPlayerWidget(controller: controller, exercise: widget.exercise, response: widget.response, sessionData: widget.sessionData),
           ],
       )
     );

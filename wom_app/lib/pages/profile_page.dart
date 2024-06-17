@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:wom_app/pages/profile_edit.dart';
 
 class Profile extends StatefulWidget {
-  final response;
-  final sessionData;
+  final dynamic response;
+  final dynamic sessionData;
 
-  const Profile({super.key, required this.response, required this.sessionData});
+  const Profile({super.key, this.response,  this.sessionData});
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -118,7 +118,7 @@ class _ProfileState extends State<Profile> {
                     color: Colors.black12,
                   )),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.0),
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [

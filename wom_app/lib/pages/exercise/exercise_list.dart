@@ -5,12 +5,19 @@ import 'exercise_item.dart';
 
 
 class ExerciseView extends StatelessWidget {
-  const ExerciseView({super.key, required this.exercises});
+  const ExerciseView({super.key,  required this.exercises, this.response, this.sessionData});
 
-  final exercises;
+  final dynamic response;
+  final dynamic sessionData;
+
+  final List<dynamic>  exercises;
+
+
+
 
   void selectExercise(BuildContext context, exercises){
-    Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => ExerciseDetails(exercise: exercises,),));
+    print('This is the dynamic list of $exercises');
+    Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => ExerciseDetails(exercise: exercises, response: response, sessionData: sessionData)));
   }
 
   @override
@@ -30,7 +37,7 @@ class ExerciseView extends StatelessWidget {
 
     Widget content = ListView.builder(
         itemCount: exercises.length,
-        itemBuilder: (context,index) => ExerciseItem(exercise: exercises[index], onSelectExercise: (exercise){
+        itemBuilder: (context,index) => ExerciseItem(exercise: exercises[index],  onSelectExercise: (exercise){
           selectExercise(context, exercise);
         },)
     );
@@ -50,6 +57,17 @@ class ExerciseView extends StatelessWidget {
     );
 
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: const Text("Wearable Knee Monitor"),
+        centerTitle: true,
+        elevation: 0.0,
+        backgroundColor: Colors.transparent,
+        titleTextStyle: TextStyle(
+          color: Colors.cyan[900],
+          fontSize: 24,
+        ),
+      ),
       body: Stack(
         children: [
           background,

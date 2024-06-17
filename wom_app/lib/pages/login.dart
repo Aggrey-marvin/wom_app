@@ -124,6 +124,7 @@ class _LoginState extends State<Login> {
                     String databaseAccessLogin = _email.text;
                     String databaseAccessPassword = _password.text;
 
+
                     try {
                       final session = await orpc.authenticate(databaseName,
                           databaseAccessLogin, databaseAccessPassword);
@@ -150,7 +151,7 @@ class _LoginState extends State<Login> {
                       if ((response['success'])) {
                         response['password'] = databaseAccessPassword;
                         if(!context.mounted) return;
-                        Navigator.of(context).push(MaterialPageRoute(
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
                             builder: (context) => NavigatorView(
                                   response: response,
                                   sessionData: session,
@@ -164,12 +165,17 @@ class _LoginState extends State<Login> {
                           )
                         );
                       }
-                    } on OdooException {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Failed to log in. Please check your credentials.'),
-                          )
-                      );
+                    } catch (e) {
+                      if (e is OdooException) {
+                        print(e.message); // Assuming OdooException has a property named 'message'
+                      } else {
+                        print(e);
+                      }
+                      // ScaffoldMessenger.of(context).showSnackBar(
+                      //     const SnackBar(
+                      //       content: Text('Hello odoo.'),
+                      //     )
+                      // );
                     }
                   },
                   style: ElevatedButton.styleFrom(

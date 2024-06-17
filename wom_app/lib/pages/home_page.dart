@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:fl_chart/fl_chart.dart';
 
 class Home extends StatefulWidget {
-  final image;
+  final dynamic image;
+  final dynamic name;
 
-  const Home({super.key, required this.image});
+  const Home({super.key, required this.image, this.name});
 
   @override
   State<Home> createState() => _WomHomeState();
@@ -33,64 +35,110 @@ class _WomHomeState extends State<Home> {
     );
 
     Widget foreground = SafeArea(
-      child: Column(
-        children: <Widget>[
+      child:  Column(
+        children: <Widget> [
           const SizedBox(height: 16),
-          CircleAvatar(
-            radius: 30.0,
-            backgroundImage: MemoryImage(widget.image),
-          ),
-          const SizedBox(height: 20.0),
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 16.0),
-            decoration: BoxDecoration(
-                color: Colors.white24,
-                borderRadius: BorderRadius.circular(15.0),
-                border: Border.all(
-                  width: 1.0,
-                  color: Colors.black12,
-                )),
-            child: const Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.fromLTRB(0, 20, 0, 5),
-                  child: Text(
-                    "RANGE OF MOTION",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18.0,
-                    ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(
+                widget.name,
+                style: const TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              Align(
+                alignment: Alignment.topRight,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 40, 0),
+                  child: CircleAvatar(
+                    radius: 30.0,
+                    backgroundImage: MemoryImage(widget.image)
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              ),
+            ],
+          ),
+          const SizedBox(height: 20.0),
+          Row(
+            children: [
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(horizontal: 34, vertical: 20),
+                decoration: BoxDecoration(
+                    color: Colors.white24,
+                    borderRadius: BorderRadius.circular(15.0),
+                    border: Border.all(
+                      width: 1.0,
+                      color: Colors.black12,
+                    )
+                ),
+                child: Column(
                   children: [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(55.0, 10.0, 0.0, 10.0),
-                      child: Text("5"),
+                    const Text(
+                      "Knee Angle",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                      ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(0.0, 10.0, 55.0, 10.0),
-                      child: Text("125"),
+                    const SizedBox(height: 16),
+
+                    Text(
+                      "70 degrees",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0,
+                          color: Colors.cyan[900]
+                      ),
                     ),
                   ],
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 18),
+                decoration: BoxDecoration(
+                    color: Colors.white24,
+                    borderRadius: BorderRadius.circular(15.0),
+                    border: Border.all(
+                      width: 1.0,
+                      color: Colors.black12,
+                    )
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(55.0, 0.0, 0.0, 15.0),
-                      child: Text("Min"),
+                    const Text(
+                      "Total Steps ",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0,
+                          color: Colors.black
+                      ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 55.0, 15.0),
-                      child: Text("Max"),
+                    const SizedBox(height: 16),
+                    Text(
+                      "800 Steps",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0,
+                          color: Colors.cyan[900]
+                      ),
                     ),
+
                   ],
                 ),
-              ],
-            ),
+
+              ),
+            ],
           ),
           const SizedBox(height: 20.0),
           Container(
@@ -101,13 +149,14 @@ class _WomHomeState extends State<Home> {
                 border: Border.all(
                   width: 1.0,
                   color: Colors.black12,
-                )),
+                )
+            ),
             child: Column(
               children: [
                 const Padding(
                   padding: EdgeInsets.fromLTRB(0, 20, 0, 2),
                   child: Text(
-                    "VERDICT",
+                    "HEALTH STATE",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -124,21 +173,49 @@ class _WomHomeState extends State<Home> {
                       color: Colors.green[900],
                       fontSize: 18,
                     ),
+
                   ),
                 ),
+
               ],
             ),
+
           ),
+          const SizedBox(height: 30),
+          AspectRatio(
+            aspectRatio: 1.5,
+            child: LineChart(
+              LineChartData(
+                lineBarsData: [
+                  LineChartBarData(
+                      spots: const [
+                        FlSpot(0, 0),
+                        FlSpot(1, 1),
+                        FlSpot(2, 1),
+                        FlSpot(3, 4),
+                        FlSpot(4, 5),
+                        FlSpot(5, 2),
+                      ],
+                      color: Colors.cyan[900]
+                  ),
+                ],
+              ),
+            ),
+          ),
+
         ],
+
       ),
     );
 
     return Scaffold(
-      body: Stack(
-        children: [
-          background,
-          foreground,
-        ],
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            background,
+            foreground,
+          ],
+        ),
       ),
     );
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wom_app/pages/exercise/exercise_item.dart';
-import 'package:wom_app/pages/exercise/exercise_list.dart';
+import 'package:wom_app/pages/bluetooth/bluetooth_scan.dart';
 import 'package:wom_app/pages/home_page.dart';
 import 'package:wom_app/pages/profile_page.dart';
 import 'dart:convert'; // For base64 decoding
@@ -8,8 +7,8 @@ import 'dart:typed_data';
 
 
 class NavigatorView extends StatefulWidget {
-  final response;
-  final sessionData;
+  final dynamic response;
+  final dynamic sessionData;
   const NavigatorView({super.key, required this.response, required this.sessionData});
 
   @override
@@ -20,26 +19,29 @@ class _NavigatorViewState extends State<NavigatorView> {
   PageController pageController = PageController();
   late List<Widget> _pages;
 
+
+
   @override
   void initState() {
     super.initState();
-    // try {`
       String base64Image = widget.response['data']['photo'] as String;
       Uint8List imageBytes = base64Decode(base64Image);
+      String name = widget.response['data']['name'];
+    String password = widget.response['password'];
+
+    print('This is the password One : $password');
+
 
       _pages = <Widget>[
         Home(
-          image: imageBytes,
+          image: imageBytes, name: name,
         ),
-        ExerciseView(exercises: widget.response['exercises']),
+        BlueScan(exercises: widget.response['exercises'], response: widget.response, sessionData: widget.sessionData),
         Profile(
           response: widget.response, sessionData: widget.sessionData,
         ),
       ];
-    // } catch (e) {
-    //   print("Failed to decode image: $e");
-    //   // Handle the error appropriately
-    // }
+
 
   }
 

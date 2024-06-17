@@ -25,7 +25,7 @@ class Patient(models.Model):
         ('in_active', 'Inactive'),
     ], string="Status", default="in_active")
     age = fields.Integer(string="Age")
-    exercise_session_ids = fields.One2many("exercise.result", string="Exercise Sessions")
+    exercise_session_ids = fields.One2many("exercise.result", "patient_id", string="Exercise Sessions")
 
     def search_user(self, vals):
         patient = self.env['patient'].search([('user_id', '=', vals.get('user_id'))])

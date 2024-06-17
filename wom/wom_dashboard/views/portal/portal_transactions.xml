@@ -50,10 +50,8 @@
                             <div class="col-sm-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4>Transactions List</h4>
-                                        <p
-                                        >Below are some of your most recent transactions</p
-                                        >
+                                        <h4>Patients List</h4>
+                                        
                                     </div>
                                     <div class="card-body">
                                         <div class="dt-responsive table-responsive">
@@ -61,26 +59,27 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Name</th>
-                                                        <th>FDN</th>
-                                                        <th>Transaction Date</th>
+                                                        <th>Doctor</th>
+                                                        <th>Gender</th>
                                                         <th>Status</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <t t-foreach="transactions" t-as="trans">
+                                                    <t t-foreach="patients" t-as="patient">
                                                         <tr>
-                                                            <td t-out="trans['name']"/>
-                                                            <td t-out="trans['fiscal_document_number']"/>
-                                                            <td t-out="trans['date']"/>
-                                                            <td t-out="trans['status']"/>
+                                                            <td t-out="patient.user_id.name">John Doe</td>
+                                                            <td>Stephen</td>
+                                                            <!-- <td t-out="patient.doctor_id.user_id.name"/> -->
+                                                            <td t-out="patient.gender">Male</td>
+                                                            <td t-out="patient.state"/>
                                                         </tr>
                                                     </t>
                                                 </tbody>
                                                 <tfoot>
                                                 <tr>
                                                     <th>Name</th>
-                                                    <th>FDN</th>
-                                                    <th>Transaction Date</th>
+                                                    <th>Doctor</th>
+                                                    <th>Gender</th>
                                                     <th>Status</th>
                                                 </tr>
                                                 </tfoot>
@@ -99,8 +98,8 @@
                     <div class="row">
                     <div class="col my-1">
                         <p class="m-0"
-                        >Kola EFRIS &#9829; designed by <a href="https://kolapro.com/" target="_blank">Kola Technologies</a></p
-                        >
+                            >WOM Dashboard &#9829; designed by <a href="https://sites.google.com/view/wearableosteoarthritismonitor/home" target="_blank">BSE24-2</a></p
+                            >
                     </div>
                     </div>
                 </div>

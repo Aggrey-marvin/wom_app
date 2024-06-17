@@ -126,12 +126,16 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <t t-foreach="transactions" t-as="trans">
+                                                    <t t-foreach="recent_exercises" t-as="exercise">
                                                         <tr>
-                                                            <td t-out="trans['name']"/>
-                                                            <td t-out="trans['fiscal_document_number']"/>
-                                                            <td t-out="trans['date']"/>
-                                                            <td t-out="trans['status']"/>
+                                                            <td t-out="exercise.patient_id.user_id.name"/>
+                                                            <td t-out="exercise.steps"/>
+                                                            <td t-out="exercise.distance"/>
+                                                            <td t-out="exercise.pain_score"/>
+                                                            <td t-out="exercise.exercise_id.name"/>
+                                                            <td t-out="exercise.duration"/>
+                                                            <td t-out="exercise.lowest_angle"/>
+                                                            <td t-out="exercise.highest_angle"/>
                                                         </tr>
                                                     </t>
                                                 </tbody>

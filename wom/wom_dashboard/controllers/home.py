@@ -46,6 +46,11 @@ class MedicalPersonnelPortal(CustomerPortal):
     def view_transactions(self):
         qcontext = {}
         uid = request.session.uid
+        patients = request.env['patient'].sudo().search([], order="id DESC")
+        qcontext['patients'] = patients
+        print("")
+        print("patients", patients)
+        print("")
         if uid:
             user = request.env['res.users'].sudo().search([('id','=',uid)])
             qcontext['user'] = user

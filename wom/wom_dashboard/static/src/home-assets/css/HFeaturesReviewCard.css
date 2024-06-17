@@ -1,0 +1,56 @@
+.h-features-review-card[data-v-f21b427d] {
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding: 32px;
+}
+@media (min-width: 1025px) {
+  .h-features-review-card[data-v-f21b427d] {
+    margin-bottom: 0;
+  }
+}
+.h-features-review-card__icon[data-v-f21b427d] {
+  margin-bottom: 16px;
+  max-width: 224px;
+  width: -moz-max-content;
+  width: max-content;
+}
+.h-features-review-card__bottom-wrapper[data-v-f21b427d] {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.h-features-review-card__bottom-wrapper a[data-v-f21b427d] {
+  display: flex;
+}
+.h-features-review-card__bottom-icon[data-v-f21b427d] {
+  max-width: 152px;
+  width: auto;
+}
+.h-features-review-card--bg-dark .h-features-review-card__text[data-v-f21b427d],
+.h-features-review-card--bg-primary-dark
+  .h-features-review-card__text[data-v-f21b427d] {
+  color: #fff;
+}
+.h-features-review-card--bg-transparent[data-v-f21b427d] {
+  background-color: transparent;
+  border: 1px solid #d5dfff;
+}
+.h-features-review-card--bg-ghost-white[data-v-f21b427d] {
+  background-color: #fafbff;
+}
+.h-features-review-card--bg-white-blue[data-v-f21b427d] {
+  background-color: #f4f5ff;
+}
+.h-features-review-card--bg-primary-dark[data-v-f21b427d] {
+  background-color: #5025d1;
+}
+.h-features-review-card--bg-dark[data-v-f21b427d] {
+  background-color: #1d1e20;
+}
+.h-features-review-card--bg-black[data-v-f21b427d] {
+  background-color: #000;
+}

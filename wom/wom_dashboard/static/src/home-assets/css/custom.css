@@ -1,0 +1,183 @@
+@font-face {
+  font-family: "Inter var";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url("../font/Inter-roman.var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter var";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  font-named-instance: "Italic";
+  src: url("../font/Inter-roman.var.woff2") format("woff2");
+}
+
+.h-flg {
+  width: 4%;
+  height: 4%;
+  margin-top: 30px;
+  margin-left: 40px;
+}
+body {
+  font-family: "Inter var", sans-serif;
+
+  overscroll-behavior: none !important;
+}
+
+html {
+  overscroll-behavior: none !important;
+}
+.header-img {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.efris-img {
+  margin-top: 130px;
+}
+
+.efris_div {
+  width: 100%;
+}
+.efris_div h5 {
+  font-size: 21px;
+  margin-top: 10px;
+}
+
+.rh5 {
+  color: #fc5185;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Style The Dropdown Button */
+.ddropbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.ddropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.ddropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.ddropdown-content a {
+  color: #353535 !important;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: start;
+  font-weight: 400;
+}
+
+/* Change color of dropdown links on hover */
+.ddropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.ddropdown:hover .ddropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.ddropdown:hover .ddropbtn {
+  background-color: #3e8e41;
+}
+
+.h-carousel-card-wrapper {
+  margin-inline-end: 20px !important;
+}
+
+@media (max-width: 540px) {
+  .tax-image {
+    display: none;
+  }
+  .h-flg {
+    display: none !important;
+  }
+  .kola-logo {
+    width: 80px !important;
+    height: auto !important;
+  }
+  .footer {
+    text-align: center !important;
+  }
+  .footer-widget-socials {
+    margin: 20px 5px 6px 25px;
+    justify-content: center;
+  }
+  .footer-widget-contact-list {
+    justify-content: center;
+  }
+}
+
+/* Portal Responsiveness
+@media (max-width: 540px) {
+  .app-sidebar__overlay {
+    display: none !important;
+  }
+  .app-sidebar {
+    display: none;
+  }
+} */
+
+.gold-btn {
+  background-color: #bc8e19 !important;
+}
+
+.tax-cop {
+  position: absolute;
+  top: 0rem;
+  left: 2rem;
+  margin-top: -30px;
+}
+
+.kola-word-div {
+  position: absolute;
+  margin-left: 15px;
+}
+
+@media (max-width: 768px) {
+  .kola-word-div {
+    position: relative;
+  }
+}
+
+.apps_banner_img {
+  width: 50%;
+  height: 50%;
+}
+
+.saas_banner_img {
+  margin-top: -10px;
+  width: 23%;
+}
+
+#layout > main > div > section.h-pricing-table.u-section-spaces > div.d-flex > img{
+  width: 80% !important;
+ }
+
+ ._currency{
+  font-size: 15px;
+}

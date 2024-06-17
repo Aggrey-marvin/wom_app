@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_assets" name="Portal Assets">
+        <head>
+            <title>Kola EFRIS | Customer Portal</title>
+            <!-- [Meta] -->
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="description" content="Able Pro is trending dashboard template made using Bootstrap 5 design framework. Able Pro is available in Bootstrap, React, CodeIgniter, Angular,  and .net Technologies."/>
+            <meta name="keywords" content="Bootstrap admin template, Dashboard UI Kit, Dashboard Template, Backend Panel, react dashboard, angular dashboard"/>
+            <meta name="author" content="Phoenixcoded"/>
+
+            <!-- [Favicon] icon -->
+            <link rel="stylesheet"  type="text/css" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css?v=1.00" />
+            <!-- [Favicon] icon -->
+            <link rel="icon" href="/wom_dashboard/static/src/form-assets/images/kolafavicon.ico" type="image/x-icon" />
+            <!-- [Font] Family -->
+            <link rel="stylesheet"  type="text/css" href="/wom_dashboard/static/src/form-assets/fonts/inter/inter.css?v=1.00" id="main-font-link" />
+            <!-- [Tabler Icons] https://tablericons.com -->
+            <link rel="stylesheet"  type="text/css" href="/wom_dashboard/static/src/form-assets/fonts/tabler-icons.min.css?v=1.00" />
+            <!-- [Feather Icons] https://feathericons.com -->
+            <link rel="stylesheet"  type="text/css" href="/wom_dashboard/static/src/form-assets/fonts/feather.css?v=1.00" />
+            <link rel="stylesheet"  type="text/css" href="/wom_dashboard/static/src/form-assets/fonts/fontawesome.css?v=1.00" />
+            <!-- [Material Icons] https://fonts.google.com/icons -->
+            <link rel="stylesheet"  type="text/css" href="/wom_dashboard/static/src/form-assets/fonts/material.css?v=1.00" />
+            <!-- [Template CSS Files] -->
+            <link rel="stylesheet"  type="text/css" href="/wom_dashboard/static/src/form-assets/css/style.css?v=1.00" id="main-style-link" />
+            <link rel="stylesheet"  type="text/css" href="/wom_dashboard/static/src/form-assets/css/custom.css?v=1.00" />
+            <link rel="stylesheet"  type="text/css" href="/wom_dashboard/static/src/form-assets/css/responsiveness.css?v=1.00" />
+            <link rel="stylesheet"  type="text/css" href="/wom_dashboard/static/src/form-assets/css/style-preset.css?v=1.00" />
+            <link rel="stylesheet"  type="text/css" href="/wom_dashboard/static/src/form-assets/css/plugins/bootstrap-switch-button.min.css?v=1.00" />
+            <!-- Google tag (gtag.js) -->
+            <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-14K1GBX9FG"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', 'G-14K1GBX9FG');
+            </script>
+            <!-- WiserNotify -->
+            <script>
+                !(function () {
+                    if (window.t4hto4) console.log('WiserNotify pixel installed multiple time in this page');
+                        else {
+                        window.t4hto4 = !0;
+                        var t = document,
+                        e = window,
+                        n = function () {
+                        var e = t.createElement('script');
+                        (e.type = 'text/javascript'),
+                            (e.async = !0),
+                            (e.src = 'https://pt.wisernotify.com/pixel.js?ti=1jclj6jkfc4hhry'),
+                            document.body.appendChild(e);
+                        };
+                    'complete' === t.readyState ? n() : window.attachEvent ? e.attachEvent('onload', n) : e.addEventListener('load', n, !1);
+                    }
+                })();
+            </script>
+            <!-- Microsoft clarity -->
+            <script type="text/javascript">
+                (function (c, l, a, r, i, t, y) {
+                    c[a] =
+                    c[a] ||
+                    function () {
+                        (c[a].q = c[a].q || []).push(arguments);
+                    };
+                    t = l.createElement(r);
+                    t.async = 1;
+                    t.src = 'https://www.clarity.ms/tag/' + i;
+                    y = l.getElementsByTagName(r)[0];
+                    y.parentNode.insertBefore(t, y);
+                })(window, document, 'clarity', 'script', 'gkn6wuhrtb');
+            </script>
+        </head>
+    </template>
+    
+    <!-- ===================ONBOARDING SCRIPTS=================== -->
+    <template id="onboarding_scripts" name="Onboarding Scripts">
+        <!-- Required Js -->
+
+        <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js?v=3.12"></script>
+        <script src="/wom_dashboard/static/src/form-assets/js/plugins/popper.min.js?v=3.12"></script>
+        <script src="/wom_dashboard/static/src/form-assets/js/plugins/simplebar.min.js?v=3.12"></script>
+        <script src="/wom_dashboard/static/src/form-assets/js/plugins/bootstrap.min.js?v=3.12"></script>
+        <script src="/wom_dashboard/static/src/form-assets/js/fonts/custom-font.js?v=3.12"></script>
+        <script src="/wom_dashboard/static/src/form-assets/js/pcoded.js?v=3.12"></script>
+        <script src="/wom_dashboard/static/src/form-assets/js/plugins/feather.min.js?v=3.12"></script>
+        <script src="/wom_dashboard/static/src/form-assets/js/plugins/bootstrap-switch-button.min.js?v=3.12" />
+
+        <!-- <script type="text/javascript" async="" src="https://pt.wisernotify.com/pixel.js?ti=1jclj6jkfc4hhry"></script> -->
+
+
+        <!-- jquery-validation Js -->
+        <script src="/wom_dashboard/static/src/form-assets/js/plugins/imask.min.js"></script>
+
+        <script src="/wom_dashboard/static/src/form-assets/js/plugins/bouncer.min.js?v=3.12"></script>
+        <script src="/wom_dashboard/static/src/form-assets/js/pages/form-validation.js?v=3.12"></script>
+        <script src="/wom_dashboard/static/src/form-assets/js/onboarding_mixins.js?v=3.12"></script>
+        <script src="/wom_dashboard/static/src/form-assets/js/onboarding_form.js?v=3.12"></script>
+        <!-- Input mask Js -->
+        <script src="/wom_dashboard/static/src/form-assets/js/pages/form-masking-custom.js?v=3.12"></script>
+        <script src="/wom_dashboard/static/src/form-assets/js/address_autocomplete.js?v=3.12"></script>
+        <script src="/wom_dashboard/static/src/form-assets/js/pages/form-masking-custom.js?v=3.12"></script>
+
+
+        <script>layout_change('light');</script>
+        <script>layout_theme_contrast_change('false');</script>
+        <script>change_box_container('false');</script>
+        <script>layout_caption_change('true');</script>
+        <script>layout_rtl_change('false');</script>
+        <script>preset_change("preset-1");</script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="/wom_dashboard/static/src/form-assets/js/plugins/jquery.dataTables.min.js"></script>
+        <script src="/wom_dashboard/static/src/form-assets/js/plugins/dataTables.bootstrap5.min.js"></script>
+        <script>
+            // [ base style ]
+            $('#base-style').DataTable();
+
+            // [ no style ]
+            $('#no-style').DataTable();
+
+            // [ compact style ]
+            $('#compact').DataTable();
+
+            // [ hover style ]
+            $('#table-style-hover').DataTable();
+        </script>
+
+    </template>
+</odoo>

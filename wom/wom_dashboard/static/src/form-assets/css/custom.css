@@ -1,0 +1,558 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+body{
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+
+
+#verify_email_loader_btn,
+#ob_step2,
+#verifyError,
+#confirm_code_loader_btn,
+#step2Error,
+#password_div,
+#amountError,
+#process_loader_btn,
+#ob_step3,
+#existEmail,
+#submit_loader_btn,
+#user-warning,
+.qty_spinner1,
+.qty_spinner2,
+#o_kpay_submit_button,
+#o_kpay_submit_loader,
+#invalidMtnNum,
+#invalidAirtelNum,
+#timer_2_div,.ksaas_title,
+#reset_loader_btn ,
+.klogo,.mobile-tabs,
+#rm_efris_span,#rm_trainees_span,
+#total-warning,#efris-warning
+,#addon_spinner,
+#efris_spinner,#training_spinner,#efris_input,#phonef .error-message{
+  display: none;
+}
+
+
+.currency_div h6{
+  color: #0050ff;
+}
+
+.currency_div.s h6{
+  color: #ff5e00;
+}
+
+#payment_method{
+  margin-top: 0px !important;
+}
+/* .card .card-body #verifyError{
+    display: none  !important;
+  } */
+.float-right{
+float: right;
+}
+.period-div .alert-warning{
+  font-size: 15px;
+}
+.suc-icon {
+  margin-right: 5px;
+}
+.toggle-password{
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    cursor: pointer;
+    font-size: 17px;
+    color: #333232;
+
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.icode {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 80px;
+}
+
+@media (max-width: 450px) {
+  .icode {
+    font-size: 2.0rem;
+    font-weight: 600;
+    letter-spacing: 25px;
+  }
+}
+
+.accreditation {
+  font-weight: 500 !important;
+}
+
+.btn-pri {
+  padding: 5px 15px;
+  margin-bottom: 5px;
+}
+.text-underline {
+  text-decoration: underline;
+}
+
+.pct-submenu li {
+  list-style-type: disclosure-closed;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.f-20 {
+  font-size: 17px;
+}
+
+.min-badge {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.p-ab {
+  padding: 20px 15px;
+}
+.wid-55 {
+  width: 55px;
+}
+
+.bd-label {
+  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+}
+
+.o_payment_option_card {
+  background: rgba(var(--bs-primary-rgb), 0.1);
+  box-shadow: 0px 8px 24px rgba(27, 46, 94, 0.12),
+    inset 0 0 0 2px rgba(var(--bs-primary-rgb), 0.5);
+  padding: 10px 10px;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+.o_payment_inline_form {
+  padding: 10px;
+}
+.iti__flag-container {
+  height: 50px;
+  margin-top: 15px;
+}
+.iti--separate-dial-code .iti__selected-flag {
+  background-color: transparent;
+  /* padding-right: 100px !important; */
+  /* display: inline-block; */
+  width: 90px;
+}
+.iti--separate-dial-code .iti__selected-flag:hover {
+  background-color: transparent;
+}
+
+#phone {
+  height: 56px;
+}
+
+.thank-you {
+  font-weight: 500;
+}
+
+.thank-div {
+  margin-left: 15px;
+}
+
+.pay-info {
+  font-weight: 600;
+  margin-left: 22px;
+}
+
+.payment-success {
+  padding-top: 15px;
+  padding-bottom: 0px;
+  margin: -5px 10px -15px 30px;
+}
+
+.success-div {
+  padding: 0px;
+  margin-left: -5px;
+  margin-right: 35px;
+}
+
+.payment-details {
+  padding: 0px !important;
+  margin-left: 0px;
+  margin-top: -10px !important;
+}
+
+.inner-details {
+  padding-bottom: 20px !important;
+  margin-bottom: -15px;
+}
+
+.print-btn {
+  margin-left: 300px !important;
+}
+
+.track-order {
+  margin-left: 280px !important;
+}
+.iti__selected-flag {
+  margin-top: -14px !important;
+}
+
+#confirm-password-error {
+  color: red;
+}
+
+.payment-status-div {
+  max-width: 80%;
+  margin: 20px auto;
+  /* background-color: blue; */
+}
+
+.payment-reference {
+  margin-left: 31px;
+}
+.cost {
+  font-size: 20px;
+  color: rgb(44, 47, 238);
+  font-family: "Abel", sans-serif;
+  margin-bottom: 0px;
+}
+.text-light {
+  font-family: "Abel", sans-serif !important;
+}
+.cost-div {
+  padding: 10px;
+  border: 2px solid #9da8fa;
+  border-radius: 8px;
+  margin-top: 37px;
+}
+
+.period-div {
+  font-size: 20px;
+  font-family: var(--bs-body-font-family);
+
+}
+
+[data-pc-preset="preset-1"] .form-check .form-check-input.input-primary,
+[data-pc-preset="preset-1"]
+  .form-check
+  .form-check-input.input-primary:checked {
+  width: 80px;
+  height: 30px;
+  cursor: pointer;
+}
+[data-pc-preset="preset-1"]
+  .form-check
+  .form-check-input.input-primary:checked {
+  border-color: #2a9018 !important;
+  background-color: #2a9018 !important;
+}
+[data-pc-preset="preset-1"] .form-check .form-check-input.input-primary {
+  border: 1px solid #2a9018;
+}
+#user_num,
+#basic-addon2,
+#period_input,
+#basic-addon3 {
+  font-size: 17px;
+}
+
+#user_num::placeholder,
+#period_input::placeholder {
+  color: #5f5f61;
+}
+.ltotal{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.ltotal h5,
+.packagein {
+  font-size: 22px;
+  font-family: "Abel", sans-serif;
+}
+.packagein {
+  padding: 10px;
+  background-color: #ddffd6;
+}
+.packagein h3 {
+  color: #669018;
+}
+.fqty {
+  display: inline-block;
+  margin-top: 12px;
+  margin-left: -10px;
+}
+.tdark {
+  color: #0a0a0b !important;
+}
+.form-control[readonly] {
+  opacity: 1;
+}
+
+.sidebar-logo {
+  left: 6rem;
+  position: fixed;
+  width: 11%;
+}
+
+.o_payment_option_label {
+  width: 100%;
+}
+
+.d-flex.flex-column.flex-md-row.align-md-items-center.justify-content-betweengap-2.mt-2 {
+  display: block !important;
+}
+
+.o-checkbox.form-check.m-0 {
+  width: 100%;
+}
+
+.iti {
+  width: 100%;
+}
+
+.phone_btn {
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+}
+.tw {
+  color: #fff !important;
+}
+
+#invalidMtnNum,
+#invalidAirtelNum {
+  font-family: "Abel", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: red;
+}
+
+.payment-status-div.ty{
+  margin-top: -30px;
+}
+#pinn{
+  color: red;
+
+}
+
+#payment_timer,#payment_2_timer,.prompt-msg{
+  font-weight: bold;
+  font-size: 20px;
+}
+#o_kpay_submit_loader{
+  width: 100%;
+}
+
+.o_blockUI {
+  cursor: wait;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.5); /* Converted color from SCSS rgba(#000, .5) */
+  color: #fff;
+  z-index: 1070 !important;
+}
+
+.alert-link{
+  display: none;
+}
+
+
+.payment_details table{
+  min-width: 400px;
+
+}
+.payment_details table tr td{
+  padding-top: 5px;
+}
+/* .cp-mb{
+  margin-bottom: 17px;
+} */
+.mt5{
+  margin-top: 10px;
+}
+
+
+.cong_link{
+  text-decoration: underline;
+  font-size: 20px;
+  color: #2a9018;
+}
+
+#form-step3 #bouncer-error_phone{
+ 
+    width: 300px;
+
+
+}
+
+#phone-1{
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.form_logo img{
+width: 20%;
+}
+
+.res_div{
+  min-width: 900px;
+}
+
+.h-active{
+  color: #4680ff;
+}
+.mobile-tabs{
+  padding-left: 10px;
+  border-radius: 8px;
+  border: 1px solid  #4680ff;
+  padding-top: 10px;
+}
+
+
+
+.period-div .form-select-lg {
+
+  font-size: 1.1rem;
+}
+
+.addons_div {
+  border: 1px solid #cacaca;
+  padding: 10px;
+  border-radius: 8px;
+ 
+}
+
+.addons_num{
+  display: none;
+}
+.addons_div .ura_img{
+  width:7%;
+}
+
+#package_information .card-header{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.switch_div{
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.addons_title{
+  font-weight: 500;
+  color: #0050ff;
+  font-size: 20px;
+
+}
+
+.prc{
+  color: #0050ff;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Abel", sans-serif;
+
+}
+
+table.addons_table thead th{
+  font-family: var(--bs-body-font-family);
+  color: #0050ff;
+  text-transform: capitalize;
+  font-size: 17px;
+  font-weight: 400;
+  padding-top: 5px;
+
+}
+
+.ksd{
+  border-top: 1px solid #e3e3e3 ;
+  border-bottom: 1px solid #e3e3e3 ;
+ padding-top: 10px;
+}
+.w-25px{
+  width: 100px;
+  font-weight: 400;
+}
+
+.cit{
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+#shopping_cart_fm .card-header{
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+#shopping_cart_fm  .addons_title{
+  font-weight: 400;
+}
+
+#shopping_cart_fm table.addons_table .media-body {
+  margin-left: 0px !important;
+  
+}
+
+.qty-input{
+  padding-left: 0;
+}
+
+.input-field-label {
+  font-size: 15px !important;
+}
+
+.smaller-text {
+  font-size: 15px !important;
+}
+
+.toggle-input {
+  height: 20px !important;
+  width: 50px !important;
+}
+
+.input-size {
+  padding: 9px !important;
+}
+
+#addr_field {
+  margin-top: 40px;
+}
+
+
+#country_code_select{
+  padding: 15px 25px 15px 15px !important;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#country_code_select img{
+  display: block !important;
+}
+
+.logout{
+  margin-left: 20px;
+  margin-top: 7px;
+}
+
+.transaction-input {
+  font-size: 20px !important;
+  font-weight: 600;
+}
+
+.minimum-amount-error-div {
+  display: none;
+}
+
+.qty-div {
+  padding: 0px 15px 0px 20px;
+}
+
+.portal-logo {
+  width: 150px;
+  height: auto;
+}

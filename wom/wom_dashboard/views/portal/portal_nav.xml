@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_nav" name="Portal Navbar">
+        <nav class="pc-sidebar">
+            <div class="navbar-wrapper">
+                <div class="m-header">
+                    <a href="/my" class="b-brand text-primary">
+                        <!-- ========   Change your logo from here   ============ -->
+                        <img src="/wom_dashboard/static/src/form-assets/images/logo-dark.png" class="img-fluid portal-logo" alt="logo"/>
+                    </a>
+                </div>
+                <div class="navbar-content">
+
+                    <ul class="pc-navbar">
+                        <li class="pc-item pc-caption">
+                            <a href="/my" class="pc-link d-flex p-3 m-0">
+                            <span class="pc-micon">
+                                <svg class="pc-icon">
+                                <use href="#custom-status-up"></use>
+                                </svg>
+                            </span>
+                            <span class="pc-mtext">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="pc-item pc-caption">
+                            <a href="/my/transactions" class="pc-link d-flex p-3 m-0">
+                                <span class="pc-micon">
+                                    <svg class="pc-icon">
+                                    <use href="#custom-keyboard"></use>
+                                    </svg>
+                                </span>
+                                <span class="pc-mtext">Transactions</span>
+                            </a>
+                        </li>
+                        <li class="pc-item pc-caption">
+                            <a href="/my/account" class="pc-link d-flex p-3 m-0">
+                                <span class="pc-micon">
+                                    <svg class="pc-icon">
+                                    <use href="#custom-user-square"></use>
+                                    </svg>
+                                </span>
+                                <span class="pc-mtext">My Account</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </template>
+</odoo>

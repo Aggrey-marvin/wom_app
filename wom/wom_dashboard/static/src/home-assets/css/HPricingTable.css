@@ -1,0 +1,633 @@
+.h-pricing-card__offer .h-pricing-card__offer-description span{
+  font-size: 20px !important;
+  display: inline-block;
+  margin-top: -13px;
+  color: #0ccf15;
+}
+
+.t-header-currency {
+
+}
+.h-pricing-card__offer p{
+  margin-bottom: 0px;
+}
+.puser{
+  font-size: 15px;
+}
+
+.pr_row{
+  max-width: 1500px;
+}
+
+.h-product-badge[data-v-dd2a6818] {
+  border-radius: 50px;
+  margin-bottom: 20px;
+  padding: 8px 68px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+}
+.h-product-badge-bg-danger[data-v-dd2a6818] {
+  background-color: #fc5185;
+  color: #fff;
+}
+.h-product-badge-bg-danger-light[data-v-dd2a6818] {
+  background-color: #ffe8ef;
+  color: #fc5185;
+}
+.h-product-badge-bg-meteorite[data-v-dd2a6818] {
+  background-color: #8c85ff;
+  color: #fff;
+}
+.h-pricing-card[data-v-f4bd2a17] {
+  margin: 0 0 24px;
+  padding-top: 24px;
+  position: relative;
+  text-align: center;
+  transition: 0.5s ease-in-out;
+  width: 328px;
+}
+@media (min-width: 768px) {
+  .h-pricing-card[data-v-f4bd2a17] {
+    margin: 0 0 32px;
+  }
+}
+@media (min-width: 1025px) {
+  .h-pricing-card[data-v-f4bd2a17] {
+    margin: 20px 0 32px;
+    width: 360px;
+  }
+  .h-pricing-card[data-v-f4bd2a17]:hover {
+    transform: scale(1.01);
+  }
+}
+@media (min-width: 1525px) {
+  .h-pricing-card[data-v-f4bd2a17]:hover {
+    transform: scale(1.02);
+  }
+}
+.h-pricing-card__hrk-price[data-v-f4bd2a17] {
+  font-size: 16px;
+}
+.h-pricing-card--narrow[data-v-f4bd2a17] .h-plan-feature__tooltip {
+  padding-inline-start: 4px;
+}
+@media (min-width: 1025px) {
+  .h-pricing-card--narrow[data-v-f4bd2a17] {
+    width: 268px;
+  }
+  .h-pricing-card--narrow .h-pricing-card__title[data-v-f4bd2a17] {
+    height: 64px;
+  }
+  .h-pricing-card--narrow[data-v-f4bd2a17] .h-product-badge {
+    padding: 8px 34px;
+  }
+}
+@media (min-width: 1525px) {
+  .h-pricing-card--narrow[data-v-f4bd2a17] {
+    width: 360px;
+  }
+  .h-pricing-card--narrow[data-v-f4bd2a17] .h-product-badge {
+    padding: 8px 68px;
+  }
+  .h-pricing-card--narrow .h-pricing-card__title[data-v-f4bd2a17] {
+    height: unset;
+  }
+}
+.h-pricing-card__container[data-v-f4bd2a17] {
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #d5dfff;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  padding: 31px 23px;
+}
+.h-pricing-card__container--popular[data-v-f4bd2a17] {
+  background-color: #fafbff;
+  border: 2px solid #8c85ff !important;
+}
+.h-pricing-card__container--dark[data-v-f4bd2a17] {
+  background-color: #1d1e20;
+  border: 1px solid #727586;
+  color: #fff;
+}
+.h-pricing-card__container--dark.h-pricing-card__container--popular[data-v-f4bd2a17] {
+  background-color: #21202a !important;
+}
+@media (min-width: 1025px) {
+  .h-pricing-card__container[data-v-f4bd2a17] {
+    padding: 39px 31px;
+  }
+}
+
+.h-pricing-card__container[data-v-f4bd2a17]:hover {
+  box-shadow: 0 2px 15px #00000026 !important;
+  border-left: 3px solid #d5dfff !important;
+}
+.h-pricing-card__badge[data-v-f4bd2a17] {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.h-pricing-card__description[data-v-f4bd2a17] {
+  margin-bottom: 0px;
+  min-height: 48px;
+}
+.h-pricing-card__title[data-v-f4bd2a17] {
+  margin-bottom: 4px;
+}
+.h-pricing-card__price-info[data-v-f4bd2a17] {
+  opacity: 0.8;
+}
+.h-pricing-card__price-description[data-v-f4bd2a17] {
+  color: #727586;
+  margin-bottom: 24px;
+}
+.h-pricing-card__current-price[data-v-f4bd2a17] {
+  margin-top: 12px;
+  width: 100%;
+}
+.h-pricing-card__current-price--margin-bottom[data-v-f4bd2a17] {
+  /* margin-bottom: 24px; */
+}
+.h-pricing-card__current-price[data-v-f4bd2a17] .h-price {
+  align-items: baseline;
+}
+.h-pricing-card__current-price[data-v-f4bd2a17] .h-price__currency--prepend {
+  margin-right: 4px;
+}
+.h-pricing-card__current-price[data-v-f4bd2a17] .h-price__currency--append {
+  margin-left: 4px;
+}
+.h-pricing-card__current-price[data-v-f4bd2a17] .h-price__number {
+  bottom: -1px;
+  position: relative;
+}
+.h-pricing-card__renewal-price[data-v-f4bd2a17] {
+  color: #727586;
+  height: 24px;
+  margin: 16px 0 32px;
+}
+.h-pricing-card__renewal-price--dark[data-v-f4bd2a17] {
+  color: #dadce0;
+  opacity: 0.8;
+}
+.h-pricing-card__renewal-price-container[data-v-f4bd2a17] {
+  display: flex;
+  gap: 4px;
+}
+.h-pricing-card__separator[data-v-f4bd2a17] {
+  border: 0.5px solid #d5dfff;
+  margin-bottom: 32px;
+  width: 100%;
+}
+.h-pricing-card__add-to-cart[data-v-f4bd2a17] {
+  max-width: 248px;
+}
+.h-pricing-card__discount[data-v-f4bd2a17] {
+  min-height: 32px;
+}
+.h-pricing-card__discount--tag[data-v-f4bd2a17] {
+  margin-left: 4px;
+}
+.h-pricing-card__feature-title[data-v-f4bd2a17] {
+  margin-bottom: 18px;
+  text-align: start;
+}
+@media (min-width: 1025px) {
+  .h-pricing-card__feature-title[data-v-f4bd2a17] {
+    margin-bottom: 24px;
+  }
+}
+.h-pricing-card__features[data-v-f4bd2a17] {
+  margin-bottom: 28px;
+  width: 100%;
+}
+@media (min-width: 1025px) {
+  .h-pricing-card__features[data-v-f4bd2a17] {
+    margin-bottom: 32px;
+  }
+}
+.h-pricing-card__features--grouped[data-v-f4bd2a17] {
+  margin: 0 0 32px;
+  width: 100%;
+}
+.h-pricing-card__see-features-primary[data-v-f4bd2a17] {
+  color: #673de6;
+}
+.h-pricing-card__see-features-danger[data-v-f4bd2a17],
+.h-pricing-card__see-features-primary[data-v-f4bd2a17] {
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.h-pricing-card__see-features-danger[data-v-f4bd2a17] {
+  color: #fc5185;
+}
+.h-pricing-card__see-features-meteorite[data-v-f4bd2a17] {
+  color: #8c85ff;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.h-pricing-card__icon[data-v-f4bd2a17] {
+  align-items: center;
+  display: flex;
+  margin-left: 8px;
+  transition: 0.5s;
+}
+.h-pricing-card__icon--active[data-v-f4bd2a17] {
+  transform: rotate(180deg);
+}
+.h-pricing-card__error[data-v-f4bd2a17] {
+  color: #d63163;
+  padding: 12px 16px;
+}
+.h-pricing-card__offer-description--danger[data-v-f4bd2a17] {
+  color: #fc5185;
+}
+.h-pricing-card__offer-description--primary[data-v-f4bd2a17] {
+  color: #673de6;
+}
+.h-pricing-card__offer-description--meteorite[data-v-f4bd2a17] {
+  color: #8c85ff;
+}
+.h-pricing-card__offer-description--hidden[data-v-f4bd2a17] {
+  visibility: hidden;
+}
+.h-pricing-card__offer[data-v-f4bd2a17] {
+  margin-bottom: 24px;
+  margin-top: -12px;
+}
+.h-pricing-card__offer[data-v-f4bd2a17] .h-circle-loader {
+  align-items: center;
+  display: flex;
+  height: 24px;
+  justify-content: center;
+  position: relative;
+}
+.h-pricing-card__offer[data-v-f4bd2a17] .h-circle-loader__content {
+  display: inline-flex;
+  margin-inline-start: -1px;
+  position: relative;
+  top: 1px;
+}
+.h-vps-pricing-card[data-v-061eb495] {
+  margin-bottom: 24px;
+  padding-bottom: 32px;
+  padding-top: 30px;
+  position: relative;
+  text-align: center;
+  transition: 0.5s ease-in-out;
+  width: 328px;
+}
+@media (min-width: 768px) {
+  .h-vps-pricing-card[data-v-061eb495] {
+    margin-bottom: 32px;
+  }
+}
+@media (min-width: 1025px) {
+  .h-vps-pricing-card[data-v-061eb495] {
+    margin-bottom: 0;
+    margin-top: 32px;
+    padding-top: 0;
+    width: auto;
+  }
+  .h-vps-pricing-card[data-v-061eb495]:hover {
+    transform: scale(1.02);
+  }
+}
+@media (min-width: 1200px) {
+  .h-vps-pricing-card[data-v-061eb495] {
+    width: 360px;
+  }
+}
+.h-vps-pricing-card--narrow[data-v-061eb495] .h-plan-feature__tooltip {
+  padding-inline-start: 4px;
+}
+.h-vps-pricing-card--narrow .h-pricing-card__title[data-v-061eb495] {
+  height: 64px;
+}
+@media (min-width: 1025px) {
+  .h-vps-pricing-card--narrow[data-v-061eb495] {
+    width: 264px;
+  }
+  .h-vps-pricing-card--narrow[data-v-061eb495] .h-product-badge {
+    padding: 8px 34px;
+    white-space: nowrap;
+  }
+  .h-vps-pricing-card--narrow[data-v-061eb495] .h-pricing-card__discount {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 1525px) {
+  .h-vps-pricing-card--narrow[data-v-061eb495] {
+    width: 360px;
+  }
+  .h-vps-pricing-card--narrow[data-v-061eb495] .h-product-badge {
+    padding: 8px 68px;
+    white-space: nowrap;
+  }
+  .h-vps-pricing-card--narrow[data-v-061eb495] .h-pricing-card__discount {
+    display: block;
+  }
+}
+.h-vps-pricing-card__container[data-v-061eb495] {
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #d5dfff;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  padding: 40px 24px;
+}
+.h-vps-pricing-card__container--popular[data-v-061eb495] {
+  border: 2px solid #8c85ff;
+}
+@media (min-width: 768px) {
+  .h-vps-pricing-card__container[data-v-061eb495] {
+    padding: 40px 32px;
+  }
+}
+@media (min-width: 1025px) {
+  .h-vps-pricing-card__container[data-v-061eb495] {
+    padding: 48px 32px;
+  }
+}
+.h-vps-pricing-card__container[data-v-061eb495]:hover {
+  box-shadow: 0 2px 15px #00000026;
+}
+.h-vps-pricing-card__badge[data-v-061eb495] {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+@media (min-width: 1025px) {
+  .h-vps-pricing-card__badge[data-v-061eb495] {
+    top: -20px;
+  }
+}
+.h-vps-pricing-card__title[data-v-061eb495] {
+  text-align: initial;
+  width: 100%;
+}
+.h-vps-pricing-card__features[data-v-061eb495] {
+  margin: 24px 0;
+  width: 100%;
+}
+.h-vps-pricing-card__price[data-v-061eb495] {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.h-vps-pricing-card__price-description[data-v-061eb495] {
+  color: #727586;
+  margin-bottom: 24px;
+}
+.h-vps-pricing-card__old-price[data-v-061eb495] {
+  margin-right: 4px;
+}
+.h-vps-pricing-card__current-price[data-v-061eb495] {
+  margin-top: 8px;
+  width: 100%;
+}
+.h-vps-pricing-card__current-price[data-v-061eb495] .h-price {
+  align-items: baseline;
+}
+.h-vps-pricing-card__current-price[data-v-061eb495]
+  .h-price__currency--prepend {
+  margin-right: 4px;
+}
+.h-vps-pricing-card__current-price[data-v-061eb495] .h-price__currency--append {
+  margin-left: 4px;
+}
+.h-vps-pricing-card__current-price[data-v-061eb495] .h-price__number {
+  bottom: -1px;
+  position: relative;
+}
+.h-vps-pricing-card__price-info[data-v-061eb495] {
+  opacity: 0.8;
+}
+.h-vps-pricing-card__discount[data-v-061eb495] {
+  min-height: 26px;
+}
+.h-vps-pricing-card__see-features-primary[data-v-061eb495] {
+  color: #673de6;
+}
+.h-vps-pricing-card__see-features-danger[data-v-061eb495],
+.h-vps-pricing-card__see-features-primary[data-v-061eb495] {
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.h-vps-pricing-card__see-features-danger[data-v-061eb495] {
+  color: #fc5185;
+}
+.h-vps-pricing-card__error[data-v-061eb495] {
+  color: #d63163;
+  padding: 12px 16px;
+}
+.h-vps-pricing-card[data-v-061eb495] .h-dynamic-size-price {
+  margin-bottom: 16px;
+  text-align: start;
+}
+.h-vps-pricing-card[dir="rtl"] .h-vps-pricing-card__old-price[data-v-061eb495] {
+  margin-left: 4px;
+}
+.h-domain-card[data-v-f2a3730c] {
+  margin-bottom: 24px;
+  padding-top: 30px;
+  position: relative;
+  text-align: center;
+  transition: 0.5s ease-in-out;
+  width: 328px;
+}
+@media (min-width: 768px) {
+  .h-domain-card[data-v-f2a3730c] {
+    margin-bottom: 32px;
+    width: 336px;
+  }
+}
+@media (min-width: 1025px) {
+  .h-domain-card[data-v-f2a3730c] {
+    margin-bottom: 0;
+    margin-top: 32px;
+    padding-top: 0;
+    width: 360px;
+  }
+  .h-domain-card[data-v-f2a3730c]:hover {
+    transform: scale(1.02);
+  }
+  .h-domain-card--narrow[data-v-f2a3730c] {
+    width: 264px;
+  }
+}
+@media (min-width: 1025px) {
+  .h-domain-card--narrow[data-v-f2a3730c] .h-product-badge {
+    padding: 8px 34px;
+  }
+}
+@media (min-width: 1525px) {
+  .h-domain-card--narrow[data-v-f2a3730c] {
+    width: 360px;
+  }
+  .h-domain-card--narrow[data-v-f2a3730c] .h-product-badge {
+    padding: 8px 68px;
+  }
+}
+.h-domain-card__container[data-v-f2a3730c] {
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #d5dfff;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  height: 382px;
+  justify-content: space-around;
+  padding: 40px 24px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .h-domain-card__container[data-v-f2a3730c] {
+    padding: 40px 32px;
+  }
+}
+@media (min-width: 1025px) {
+  .h-domain-card__container[data-v-f2a3730c] {
+    height: 394px;
+    padding: 48px 32px;
+  }
+}
+.h-domain-card__container[data-v-f2a3730c]:hover {
+  box-shadow: 0 2px 15px #00000026;
+}
+.h-domain-card__icon[data-v-f2a3730c] {
+  margin-top: 12px;
+  min-width: 20px;
+}
+.h-domain-card__badge[data-v-f2a3730c] {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+@media (min-width: 1025px) {
+  .h-domain-card__badge[data-v-f2a3730c] {
+    top: -20px;
+  }
+}
+.h-domain-card__image-container[data-v-f2a3730c] {
+  margin-bottom: 16px;
+  width: 100%;
+}
+.h-domain-card__image[data-v-f2a3730c] {
+  max-width: 160px;
+}
+.h-domain-card__description[data-v-f2a3730c] {
+  height: 50px;
+  margin-bottom: 24px;
+  text-align: start;
+  width: 100%;
+}
+.h-domain-card__price[data-v-f2a3730c] {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.h-domain-card__old-price[data-v-f2a3730c] {
+  margin-inline-end: 4px;
+}
+.h-domain-card__current-price[data-v-f2a3730c] {
+  margin-top: 8px;
+  width: 100%;
+}
+.h-domain-card__current-price[data-v-f2a3730c] .h-price {
+  align-items: baseline;
+}
+.h-domain-card__current-price[data-v-f2a3730c] .h-price__number {
+  bottom: -1px;
+  position: relative;
+}
+.h-domain-card__discount--hidden[data-v-f2a3730c] {
+  visibility: hidden;
+}
+.h-domain-card__error[data-v-f2a3730c] {
+  color: #d63163;
+  padding: 12px 16px;
+}
+.h-domain-card[data-v-f2a3730c] .h-dynamic-size-price {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 16px;
+}
+.h-pricing-table[data-v-f0b03e69] {
+  text-align: center;
+}
+.h-pricing-table--black[data-v-f0b03e69] {
+  background-color: #000;
+  color: #fff;
+}
+.h-pricing-table__switcher[data-v-f0b03e69] {
+  margin-bottom: 32px;
+}
+@media (min-width: 768px) {
+  .h-pricing-table__switcher[data-v-f0b03e69] {
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 1025px) {
+  .h-pricing-table__switcher[data-v-f0b03e69] {
+    margin-bottom: 48px;
+  }
+}
+.h-pricing-table__info[data-v-f0b03e69] {
+  margin-bottom: 32px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .h-pricing-table__info[data-v-f0b03e69] {
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 1025px) {
+  .h-pricing-table__info[data-v-f0b03e69] {
+    margin-bottom: 48px;
+    padding: 0 48px 0 28px;
+  }
+}
+.h-pricing-table__description[data-v-f0b03e69] {
+  margin-top: 16px;
+}
+@media (min-width: 768px) {
+  .h-pricing-table__description[data-v-f0b03e69] {
+    margin-top: 24px;
+  }
+}
+@media (min-width: 1025px) {
+  .h-pricing-table__description[data-v-f0b03e69] {
+    margin-top: 32px;
+  }
+}
+.h-pricing-table__payment-terms[data-v-f0b03e69] {
+  /* margin-top: 48px; */
+}

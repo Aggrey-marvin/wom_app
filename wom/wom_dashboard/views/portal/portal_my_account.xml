@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_account" name="Portal Transactions">
+        <html lang="en">
+            <t t-call="wom_dashboard.portal_assets"/>
+            <!-- [Body] Start -->
+
+            <body data-pc-preset="preset-1" data-onboarding_scripts-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme_contrast="" data-pc-theme="light">
+                <!-- [ Pre-loader ] start -->
+                <div class="loader-bg">
+                    <div class="loader-track">
+                        <div class="loader-fill"></div>
+                    </div>
+                </div>
+                <!-- [ Pre-loader ] End -->
+
+                <!-- [ Sidebar Menu ] start -->
+                <t t-call="wom_dashboard.portal_nav"/>
+
+                <!-- [ Sidebar Menu ] end --> <!-- [ Header Topbar ] start -->
+                <t t-call="wom_dashboard.portal_header"/>
+                <!-- [ Header ] end -->
+
+
+
+                <!-- [ Main Content ] start -->
+                    <div class="pc-container dashboard-pc-container">
+                        <div class="pc-content">
+                            <!-- [ breadcrumb ] start -->
+                            <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                        <li class="breadcrumb-item" aria-current="page">My Account</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h2 class="mb-0">My Account</h2>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                            <!-- [ breadcrumb ] end -->
+                            <div class="row">
+                                <!-- [ sample-page ] start -->
+                                <div class="col-lg-4 col-xxl-4">
+                                    <div class="card">
+                                        <div class="card-body position-relative">
+                                            <div class="text-center mt-1">
+                                                <h4 class="mb-0 text-start" t-out="partner.name"/>
+                                                <hr class="my-1 border border-secondary-subtle"/>
+                                                <div class="d-inline-flex align-items-center justify-content-start w-100 mb-3">
+                                                    <i class="ti ti-mail me-2"></i>
+                                                    <p class="mb-0" t-out="partner.email"/>
+                                                </div>
+                                                <div class="d-inline-flex align-items-center justify-content-start w-100 mb-3">
+                                                    <i class="ti ti-phone me-2"></i>
+                                                    <p class="mb-0" t-out="partner.phone"/>
+                                                </div>
+                                                <div class="d-inline-flex align-items-center justify-content-start w-100 mb-3">
+                                                    <i class="ti ti-map-pin me-2"></i>
+                                                    <p class="mb-0" t-out="user.partner_id.city"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="card">
+                                    <div class="card-header p-3">
+                                        <h4>Upload Authorization Letter</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <form action="/my/account" method="post" enctype="multipart/form-data" class="mb-0">
+                                            <div class="form mb-4 mt-2">
+                                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                                <input type="file" class="form-control" id="" name="letter" required="" />
+                                                <input type="hidden" name="upload" value="upload" />
+                                            </div>
+                                            <div class="">
+                                                <div class="card-footer text-right p-0 mb-0">
+                                                    <button type="submit" class="btn btn-primary mt-1">Upload</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-12">
+                                    <div class="card overflow-hidden">
+                                        <div class="card-header d-flex justify-content-between">
+                                            <div>
+                                                <h3 class="card-title">Registration Status</h3>
+                                            </div>
+                                            <div class="card-options">
+                                                <a t-if="has_letter" class="btn btn-sm btn-success text-white p-1" href="#">
+                                                    <t t-esc="partner.state" />
+                                                </a>
+                                                <a t-else="else" class="btn btn-sm btn-danger text-white p-1" href="#">No Letter</a>
+                                            </div>
+                                        </div>
+                                        <div class="card-body pb-0">
+                                            <div class="activity1">
+                                                <div class="activity-blog d-flex justify-content-between mb-5">
+                                                    <div class="activity-details d-flex">
+                                                        <div t-att-class="'px-2 text-primary activity-img brround border-primary' if has_letter else 'text-gray activity-img brround border-primary'">
+                                                            <i class="fa fa-envelope fs-3"></i>
+                                                        </div>
+                                                        <div class="px-2 mt-1">
+                                                            <b>
+                                                                <span t-att-class="'text-success' if has_letter else ''" class="text-gray">Authorization Letter</span>
+                                                            </b>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="ml-auto fs-13 text-dark font-weight-semibold mt-1">
+                                                        <i t-if="has_letter" class="fa fa-check fs-10 text-success"></i>
+                                                        <i t-else="else" class="fa fa-times fs-10 text-danger"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="activity-blog d-flex justify-content-between mb-5">
+                                                        <div class="activity-details d-flex">
+                                                            <div t-att-class="'px-2 text-primary activity-img brround border-primary' if has_letter else 'text-gray activity-img brround border-primary'">
+                                                                <i class="fa fa-spinner fs-3"></i>
+                                                            </div>
+                                                            <div class="px-2 mt-1">
+                                                                <b>
+                                                                    <span class="text-success" t-att-class="'text-success' if partner.state in ['pending','approved'] and has_letter else 'text-gray'">Pending</span>
+                                                                </b>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="ml-auto fs-13 text-dark font-weight-semibold mt-1">
+                                                            <i t-if="partner.state in ['pending','approved'] and has_letter" class="fa fa-check fs-10 text-success"></i>
+                                                            <i t-else="else" class="fa fa-times fs-10 text-danger"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="activity-blog d-flex justify-content-between mb-5">
+                                                        <div class="activity-details d-flex">
+                                                            <div t-att-class="'px-2 text-primary activity-img brround border-primary' if has_letter else 'text-gray activity-img brround border-primary'">
+                                                                <i class="fa fa-thumbs-up fs-3"></i>
+                                                            </div>
+                                                            <div class="px-2 mt-1">
+                                                                <b>
+                                                                    <span class="text-gray" t-att-class="'text-success' if partner.state =='approved' and has_letter else 'text-gray'">Approved</span>
+                                                                </b>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="ml-auto fs-13 text-dark font-weight-semibold mt-1">
+                                                            <i t-if="partner.state=='approved' and has_letter" class="fa fa-check fs-10 text-success"></i>
+                                                            <i t-else="else" class="fa fa-times fs-10 text-danger"></i>
+                                                        </div>
+                                                    </div>
+
+                                                    <div t-att-class="'d-none' if partner.state in ['pending', 'approved'] else 'activity-blog d-flex justify-content-between mb-2'">
+                                                        <div class="activity-details d-flex">
+                                                            <div t-att-class="'px-2 text-primary activity-img brround border-primary' if has_letter else 'text-gray activity-img brround border-primary'">
+                                                                <i class="fa fa-frown fs-3 text-warning"></i>
+                                                            </div>
+                                                            <div class="px-2 mt-1">
+                                                                <b>
+                                                                    <span class="text-gray" t-att-class="'text-danger' if partner.state =='rejected' and has_letter else 'text-gray'">Rejected</span>
+                                                                </b>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="ml-auto fs-13 text-dark font-weight-semibold mt-1">
+                                                            <i t-if="partner.state=='rejected'" class="fa fa-times fs-10 text-danger"></i>
+                                                            <i t-else="else" class="fa fa-check fs-10 text-success"></i>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                <div class="col-lg-7">
+                                    <div class="card">
+                                        <div class="card-header p-3">
+                                            <h4>Edit Profile</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <form action="/my/account" method="POST" class="mb-0 pb-0">
+                                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                                <div class="row g-4 mb-4">
+                                                    <div class="col-md-6">
+                                                        <div class="form-floating mb-0">
+                                                            <input type="text" t-att-value="user.name.split(' ')[0]" name="first_name_edit" required="" class="form-control" id="first_name_edit" placeholder="First Name" />
+                                                            <label for="floatingInput" class="input-field-label">First Name</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-floating mb-0">
+                                                            <input type="text" t-att-value="' '.join(user.name.split(' ')[1:])" name="last_name_edit" required="" class="form-control" id="last_name_edit" placeholder="Last Name" maxlength="20"/>
+                                                            <label for="floatingInput" class="input-field-label">Last Name</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row g-4 mb-4">
+                                                    <div class="col-md-6">
+                                                        <div class="form-floating mb-0">
+                                                            <input type="text" t-att-value="user.email" name="email_edit" required="" class="form-control" id="email_edit" placeholder="Email" />
+                                                            <label for="floatingInput" class="input-field-label">Email</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-floating mb-0">
+                                                            <input type="text" t-att-value="user.phone" name="phone_edit" required="" class="form-control" id="phone_edit" placeholder="Phone  " maxlength="10"/>
+                                                            <label for="floatingInput" class="input-field-label">Phone</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row g-4 mb-4">
+                                                    <div class="col-md-12">
+                                                        <div class="form-floating mb-0">
+                                                            <input type="text" t-att-value="partner.vat" name="vat_edit" required="" class="form-control" id="vat_edit" placeholder="TIN" />
+                                                            <label for="floatingInput" class="input-field-label">TIN</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer py-0 d-flex justify-content-between">
+                                                    <a href="#" class="btn btn-secondary my-3">Cancel</a>
+                                                    <button type="submit" name="save" class="btn btn-primary my-3">Save</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- [ Main Content ] end -->
+
+                <footer class="pc-footer">
+                <div class="footer-wrapper container-fluid">
+                    <div class="row">
+                    <div class="col my-1">
+                        <p class="m-0"
+                        >Kola EFRIS &#9829; designed by <a href="https://kolapro.com/" target="_blank">Kola Technologies</a></p
+                        >
+                    </div>
+                    </div>
+                </div>
+                </footer> <!-- Required Js -->
+                <t t-call="wom_dashboard.onboarding_scripts"/>
+            </body>
+            <!-- [Body] end -->
+        </html>
+    </template>
+</odoo>

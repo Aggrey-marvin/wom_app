@@ -1,0 +1,178 @@
+.header--dark[data-v-ceef2c57] .h-countdown__colon {
+  color: #fff;
+}
+.header--dark[data-v-ceef2c57] .h-countdown__card {
+  background: hsla(0, 0%, 100%, 0.1);
+  border: none !important;
+  color: #fff;
+}
+.header--dark[data-v-ceef2c57] .h-countdown__card-name {
+  display: none;
+}
+.header--dark[data-v-ceef2c57] .header__overline-discount {
+  color: #fff;
+}
+.header__heading[data-v-ceef2c57] b {
+  color: #8c85ff;
+}
+.header__heading[data-v-ceef2c57] .header__heading-discount {
+  color: #673de6;
+  font-weight: 700;
+}
+.header__loader[data-v-ceef2c57] {
+  margin-top: 8px;
+}
+.header__loader--bottom[data-v-ceef2c57] {
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+.header[data-v-ceef2c57] .h-features-header__heading-wrapper {
+  margin-bottom: 16px;
+}
+@media (min-width: 1025px) {
+  .header[data-v-ceef2c57] .h-features-header__heading-wrapper {
+    margin-bottom: 24px;
+    width: 510px;
+  }
+}
+.header[data-v-ceef2c57] .h-features-header__button {
+  width: 291px;
+}
+@media (min-width: 1367px) {
+  .header[data-v-ceef2c57] .h-features-header__button {
+    width: 315px;
+  }
+}
+.header[data-v-ceef2c57] .h-countdown__card {
+  border: 1px solid #2f1c6a;
+}
+.header[data-v-ceef2c57] .h-countdown__card-name {
+  display: none;
+}
+.header[data-v-ceef2c57] .h-circle-loader {
+  align-items: center;
+  display: flex;
+  height: 24px;
+  justify-content: center;
+  position: relative;
+}
+@media (min-width: 1025px) {
+  .header[data-v-ceef2c57] .h-circle-loader {
+    align-items: normal;
+    height: 32px;
+    justify-content: normal;
+  }
+}
+.header[data-v-ceef2c57] .h-circle-loader__content {
+  display: inline-flex;
+  margin-inline-start: -1px;
+  position: relative;
+  top: 1px;
+}
+@media (min-width: 1025px) {
+  .header[data-v-ceef2c57] .h-circle-loader__content {
+    margin-inline-start: -14px;
+    top: -4px;
+  }
+}
+.header__overline[data-v-ceef2c57] {
+  margin-bottom: 8px;
+}
+.header__overline--homepage[data-v-ceef2c57] {
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+.header__overline[data-v-ceef2c57] .header__overline-discount--important {
+  color: #673de6 !important;
+  font-weight: 700;
+}
+.header__overline[data-v-ceef2c57] .header__overline-discount {
+  color: #673de6;
+  font-weight: 700;
+}
+.header__overline[data-v-ceef2c57] h1 {
+  display: inline;
+}
+.header__list[data-v-ceef2c57] {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1025px) {
+  .header__list[data-v-ceef2c57] {
+    align-items: flex-start;
+  }
+}
+.header__list-item[data-v-ceef2c57] {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+.header__list-item[data-v-ceef2c57]:last-of-type {
+  margin-bottom: 16px;
+}
+@media (min-width: 1025px) {
+  .header__list-item[data-v-ceef2c57]:last-of-type {
+    margin-bottom: 24px;
+  }
+}
+.header__list-item-icon[data-v-ceef2c57] {
+  display: inline-flex;
+}
+.header__list-item-tooltip-icon[data-v-ceef2c57] {
+  cursor: pointer;
+}
+.header__price-wrapper[data-v-ceef2c57] {
+  margin-bottom: 2px;
+}
+.header__price-old[data-v-ceef2c57] {
+  margin: 0 8px;
+}
+.header__price-old[data-v-ceef2c57] .h-price__currency,
+.header__price-old[data-v-ceef2c57] .h-price__number {
+  color: #727586 !important;
+  font-size: 24px !important;
+  font-weight: 500;
+  line-height: 28px;
+  margin: 0;
+  text-decoration: line-through;
+}
+.header__price-old[data-v-ceef2c57] .h-price__suffix {
+  color: #727586 !important;
+  font-size: 14px !important;
+  font-weight: 400;
+}
+.header__hrk-price[data-v-ceef2c57] {
+  color: #727586;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.header__timer[data-v-ceef2c57] {
+  margin-bottom: 24px;
+  margin-top: 16px;
+}
+@media (min-width: 1025px) {
+  .header__timer[data-v-ceef2c57] {
+    margin-top: 24px;
+  }
+}
+.header__features-list[data-v-ceef2c57] {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+@media (min-width: 1025px) {
+  .header__features-list[data-v-ceef2c57] {
+    align-items: flex-start;
+  }
+}
+.header__features-list-item[data-v-ceef2c57] {
+  align-items: center;
+  display: flex;
+}
+.header__features-list-item-icon[data-v-ceef2c57] {
+  display: inline-flex;
+  margin-inline-end: 4px;
+}

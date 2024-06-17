@@ -1,0 +1,93 @@
+.h-features-header__info-wrapper[data-v-b3fc1b65] {
+  text-align: center;
+}
+@media (min-width: 1025px) {
+  .h-features-header__info-wrapper[data-v-b3fc1b65] {
+    text-align: start;
+
+    margin-top: 30px;
+  }
+}
+.h-features-header--bg-black[data-v-b3fc1b65],
+.h-features-header--bg-meteorite-dark[data-v-b3fc1b65],
+.h-features-header--bg-primary[data-v-b3fc1b65] {
+  color: #fff;
+}
+.h-features-header--bg-meteorite-light[data-v-b3fc1b65] {
+  background-color: #d5dfff;
+}
+.h-features-header__heading-wrapper[data-v-b3fc1b65] {
+  margin-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .h-features-header__heading-wrapper[data-v-b3fc1b65] {
+    margin-bottom: 24px;
+  }
+}
+@media (min-width: 1025px) {
+  .h-features-header__heading-wrapper[data-v-b3fc1b65] {
+    margin-bottom: 32px;
+  }
+}
+.h-features-header__heading[data-v-b3fc1b65] b {
+  color: #8c85ff;
+}
+.h-features-header__description[data-v-b3fc1b65] {
+  margin-bottom: 32px;
+}
+@media (min-width: 768px) {
+  .h-features-header__description[data-v-b3fc1b65] {
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 1025px) {
+  .h-features-header__description[data-v-b3fc1b65] {
+    margin-bottom: 48px;
+  }
+}
+.h-features-header__button-wrapper[data-v-b3fc1b65] {
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 1025px) {
+  .h-features-header__button-wrapper[data-v-b3fc1b65] {
+    justify-content: flex-start;
+  }
+}
+.h-features-header__button[data-v-b3fc1b65] {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .h-features-header__button[data-v-b3fc1b65] {
+    margin: 0 auto;
+    width: 336px;
+  }
+}
+@media (min-width: 1025px) {
+  .h-features-header__button[data-v-b3fc1b65] {
+    margin: 0;
+    width: 264px;
+  }
+}
+.h-features-header__features-list[data-v-b3fc1b65] {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+@media (min-width: 1025px) {
+  .h-features-header__features-list[data-v-b3fc1b65] {
+    align-items: flex-start;
+  }
+}
+.h-features-header__list-item[data-v-b3fc1b65] {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+.h-features-header__list-item[data-v-b3fc1b65]:last-child {
+  margin-bottom: 0;
+}
+.h-features-header__image-wrapper[data-v-b3fc1b65] {
+  position: relative;
+}

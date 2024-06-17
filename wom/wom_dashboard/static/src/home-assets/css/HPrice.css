@@ -1,0 +1,72 @@
+.h-price[data-v-6508a6ad] {
+  display: inline-flex;
+}
+.h-price__currency--prepend[data-v-6508a6ad] {
+  margin-right: 4px;
+}
+.h-price__currency--append[data-v-6508a6ad] {
+  margin-left: 4px;
+}
+.h-price[dir="rtl"] .h-price__currency--prepend[data-v-6508a6ad] {
+  margin-left: 4px;
+  margin-right: 0;
+}
+.h-price[dir="rtl"] .h-price__currency--append[data-v-6508a6ad] {
+  margin-left: 0;
+  margin-right: 4px;
+}
+.h-price--text-dark .h-price__currency[data-v-6508a6ad],
+.h-price--text-dark .h-price__number[data-v-6508a6ad],
+.h-price--text-dark .h-price__suffix[data-v-6508a6ad] {
+  color: #1d1e20;
+}
+.h-price--text-light .h-price__currency[data-v-6508a6ad],
+.h-price--text-light .h-price__number[data-v-6508a6ad],
+.h-price--text-light .h-price__suffix[data-v-6508a6ad] {
+  color: #fff;
+}
+.h-price--text-gray .h-price__currency[data-v-6508a6ad],
+.h-price--text-gray .h-price__number[data-v-6508a6ad],
+.h-price--text-gray .h-price__suffix[data-v-6508a6ad] {
+  color: #727586;
+}
+.h-price--text-primary .h-price__currency[data-v-6508a6ad],
+.h-price--text-primary .h-price__number[data-v-6508a6ad],
+.h-price--text-primary .h-price__suffix[data-v-6508a6ad] {
+  color: #673de6;
+}
+.h-price--text-primary-hoster-blue .h-price__currency[data-v-6508a6ad],
+.h-price--text-primary-hoster-blue .h-price__number[data-v-6508a6ad],
+.h-price--text-primary-hoster-blue .h-price__suffix[data-v-6508a6ad] {
+  color: #007aff;
+}
+.h-price--text-meteorite .h-price__currency[data-v-6508a6ad],
+.h-price--text-meteorite .h-price__number[data-v-6508a6ad],
+.h-price--text-meteorite .h-price__suffix[data-v-6508a6ad] {
+  color: #8c85ff;
+}
+.h-price--text-danger .h-price__currency[data-v-6508a6ad],
+.h-price--text-danger .h-price__number[data-v-6508a6ad],
+.h-price--text-danger .h-price__suffix[data-v-6508a6ad] {
+  color: #fc5185;
+}
+.h-price--text-success .h-price__currency[data-v-6508a6ad],
+.h-price--text-success .h-price__number[data-v-6508a6ad],
+.h-price--text-success .h-price__suffix[data-v-6508a6ad] {
+  color: #00b090;
+}
+.h-price--text-warning .h-price__currency[data-v-6508a6ad],
+.h-price--text-warning .h-price__number[data-v-6508a6ad],
+.h-price--text-warning .h-price__suffix[data-v-6508a6ad] {
+  color: #ffcd35;
+}
+.h-price--text-meteorite-dark .h-price__currency[data-v-6508a6ad],
+.h-price--text-meteorite-dark .h-price__number[data-v-6508a6ad],
+.h-price--text-meteorite-dark .h-price__suffix[data-v-6508a6ad] {
+  color: #2f1c6a;
+}
+.h-price--text-gray-border .h-price__currency[data-v-6508a6ad],
+.h-price--text-gray-border .h-price__number[data-v-6508a6ad],
+.h-price--text-gray-border .h-price__suffix[data-v-6508a6ad] {
+  color: #dadce0;
+}

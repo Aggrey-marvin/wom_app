@@ -1,0 +1,76 @@
+/* Landscape phones and down */
+
+
+.mobile_pricings{
+    display: none;
+}@media (max-width: 480px) {
+
+
+    .web_pricings{
+        display: none;
+    }
+    
+.mobile_pricings{
+    display: block;
+}
+
+.h-carousel-card-wrapper__gradient[data-v-39fe65b4] {
+
+    display: none;
+  }
+
+
+.mobile_pricings .h-carousel-card-wrapper[data-v-39fe65b4]:first-child {
+    margin-left: 35px;
+}
+
+.layout #region_header_banner{
+    display: block !important;
+    padding: 10px;
+    text-align: center;
+
+}
+
+
+#region_header_banner #submit_region{
+    display: none;
+}
+#region_header_banner .form-group{
+    margin-top: 5px;
+    width: 60%;
+    margin-left: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.h-nav[data-v-9fa37eee] {
+
+    margin-top: 120px;
+}
+.h-features-header__info-wrapper{
+    margin-top: 125px;
+}
+
+.layout .kola-logo {
+    width: 100% !important;
+}
+#region_header_banner p{
+    font-size: 14px;
+}
+
+
+.address .footer-widget {
+   padding-left: 30%;
+}
+}
+
+@media (max-width: 378px) {
+    .mobile_pricings .h-carousel-card-wrapper[data-v-39fe65b4]:first-child {
+        margin-left: 15px;
+    }
+}
+
+body{
+    overflow-x: hidden;
+  }
+  

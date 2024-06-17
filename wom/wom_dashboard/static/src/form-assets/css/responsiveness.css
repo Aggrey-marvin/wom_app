@@ -1,0 +1,271 @@
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .klogo {
+    display: block;
+  }
+  /* .auth-main .auth-wrapper .auth-form .card {
+    max-width: 350px  !important;
+  } */
+
+  .auth-main .auth-wrapper .auth-form {
+    margin-left: 10px;
+    align-items: start;
+    justify-content: start;
+  }
+
+  .form_logo,
+  .ksaas_title {
+    display: flex;
+    justify-content: center;
+  }
+  .form_logo img {
+    width: 40%;
+  }
+  .ksaas_title h3,
+  .page-header-title h2,
+  .abel,
+  .thank-div {
+    font-family: "Abel", sans-serif;
+  }
+  .ksaas_title h3 {
+    color: rgb(44, 47, 238);
+    text-decoration: underline;
+    margin-top: -10px;
+    margin-bottom: 30px;
+  }
+
+  #mtit {
+    font-size: 15px;
+  }
+
+  #code-input .col {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  #bottom-wizard #submit-btn,
+  #bottom-wizard #step_backward {
+    width: 40% !important;
+    height: 40px;
+  }
+
+  #payment_step1 .coupon-card {
+    display: none;
+  }
+  #payment_step1 .nav-link,
+  #shopping_cart_fm .nav-link {
+    padding: 0.5rem;
+  }
+
+  .cost {
+    font-size: 19px;
+    margin-bottom: 0px;
+  }
+  .list-group-item h5 {
+    font-size: 19px;
+  }
+
+  #payment_step1 .card .card-body {
+    padding: 10px;
+}
+  .pc-container .pc-content , 
+  #ob_step1,#ob_step2,#ob_step3,.rdiv{
+    /* padding-left: 0px; */
+    max-width: 90%;
+  }
+  .flg{
+    padding-left: 0px;
+    margin-top: -5px;
+    margin-bottom: 20px;
+  }
+  .flg img {
+    width: 40%;
+  }
+
+  .print-btn {
+    display: none;
+  }
+  #payment_method_fm #payment_method {
+    margin-top: 0px !important;
+  }
+
+  #remove_efris , #remove_trainees,#add_trainees,#add_efris{
+      padding-top: 5px;
+      padding-bottom: 5px;
+  
+  }
+
+
+  .addons_div span{
+    font-size: 15px;
+    text-align: center;
+
+  }
+  .addons_title {
+
+    font-size: 18px;
+}
+
+  .addons_div span .prc{
+    display: block;
+    font-size: 15px;
+    font-family: var(--bs-body-font-family);
+    font-weight: 400;
+
+
+}
+.addons_div .ura_img {
+  width: 13%;
+  height: 45px;
+}
+  .track-order,
+  .pay-info,
+  .thank-div {
+    margin-left: 0px !important;
+  }
+  .f18 {
+    font-size: 18px !important;
+  }
+
+  .mobile-tabs {
+    display: flex;
+    margin-top: -20px;
+  }
+  .checkout-tabs,.packagein,.back-shop,.page-header-title ,.cart-summ,#address_on_payment,
+  .address-check,.pay-with,#oe_structure_website_sale_payment_1,#bank_payment_form{
+    display: none !important;
+  }
+
+  #user_num,
+  #basic-addon2,
+  #period_input,
+  #basic-addon3 {
+    font-size: 15px;
+  }
+  .period-div .form-select-lg {
+    font-size: 1rem;
+}
+
+#package_select{
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+[data-pc-preset="preset-1"] .form-check .form-check-input.input-primary, [data-pc-preset="preset-1"]
+  .form-check
+  .form-check-input.input-primary:checked {
+    width: 60px;
+    height: 22px;
+}
+.period-div {
+  font-size: 17px;
+}
+
+
+  #payment_step1 .card-header, #shopping_cart_fm .card-header,  #payment_method_fm .card-header {
+    padding: 5px;
+  }
+
+  .cost-div{
+    padding: 10px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  .ltotal, #shopping_cart_fm .cit,.lgit{
+    padding: 5px;
+  }
+  .pcd{
+    margin-bottom: 5px;
+  }
+.cit h5{
+  color: blue;
+}
+#payment_step1 .klogo , #shopping_cart_fm .klogo,  #payment_method_fm .klogo,#confirmation_form .klogo{
+  margin-bottom: 5px !important;
+}
+#payment_step1 .flg{
+  margin-top: -15px;
+}
+.payment_details table {
+  min-width: 330px;
+  font-size: 13px;
+}
+.phone_btn{
+    padding-left: 10px;
+    padding-right: 5px;
+
+}
+.payment_details .card-body{
+  padding-left: 10px;
+}
+#o_payment_methods li{
+  padding-left: 10px;
+}
+ .prompt-msg {
+  font-size: 15px;
+}
+
+.address-check {
+  display: block !important;
+}
+
+.js_edit_address {
+  display: none;
+}
+
+.billing-address-info {
+  width: 100%;
+  /* margin: 0; */
+  border-color: white !important;
+  margin-top: -30px !important;
+}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .auth-main .auth-wrapper.v2 {
+    display: grid;
+  }
+  .res_div {
+    width: 0px;
+  }
+}
+
+@media (max-width: 768px){
+  .cost-div {
+
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+  
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+/* Large desktop */
+@media (max-width: 1199px) {
+  .auth-main .auth-wrapper.v2 {
+    display: grid;
+}
+#payment_step1 .coupon-card {
+  display: none;
+}
+.res_div{
+  width: 100%;
+}
+.auth-main .auth-wrapper .auth-form .card {
+  width: 100%;
+  max-width: 100%;
+  box-shadow: none;
+}
+.sfdiv{
+  width: 0%;
+display: none;
+}
+
+.mfdiv{
+  width: 100% !important;
+}
+}

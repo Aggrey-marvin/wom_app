@@ -1,0 +1,19 @@
+.h-single-pricing-table-section__info[data-v-eacc54e7] {
+  text-align: center;
+}
+.h-single-pricing-table-section__description[data-v-eacc54e7] {
+  margin-top: 16px;
+}
+@media (min-width: 768px) {
+  .h-single-pricing-table-section__description[data-v-eacc54e7] {
+    margin-top: 24px;
+  }
+}
+@media (min-width: 1025px) {
+  .h-single-pricing-table-section__description[data-v-eacc54e7] {
+    margin-top: 32px;
+  }
+}
+.h-single-pricing-table-section__pricing-table[data-v-eacc54e7] {
+  margin-top: 48px;
+}

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_transactions" name="Portal Transactions">
+        <html lang="en">
+            <t t-call="wom_dashboard.portal_assets"/>
+            <!-- [Body] Start -->
+
+            <body data-pc-preset="preset-1" data-onboarding_scripts-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme_contrast="" data-pc-theme="light">
+                <!-- [ Pre-loader ] start -->
+                <div class="loader-bg">
+                    <div class="loader-track">
+                        <div class="loader-fill"></div>
+                    </div>
+                </div>
+                <!-- [ Pre-loader ] End -->
+
+                <!-- [ Sidebar Menu ] start -->
+                <t t-call="wom_dashboard.portal_nav"/>
+
+                <!-- [ Sidebar Menu ] end --> <!-- [ Header Topbar ] start -->
+                <t t-call="wom_dashboard.portal_header"/>
+                <!-- [ Header ] end -->
+
+
+
+                <!-- [ Main Content ] start -->
+                    <div class="pc-container dashboard-pc-container">
+                        <div class="pc-content">
+                            <!-- [ breadcrumb ] start -->
+                            <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                        <li class="breadcrumb-item" aria-current="page">Transactions</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h2 class="mb-0">Transactions</h2>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                            <!-- [ breadcrumb ] end -->
+                            
+                            <!-- [ Transactions Table ] start -->
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Transactions List</h4>
+                                        <p
+                                        >Below are some of your most recent transactions</p
+                                        >
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="dt-responsive table-responsive">
+                                            <table id="base-style" class="table table-striped table-bordered nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>FDN</th>
+                                                        <th>Transaction Date</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <t t-foreach="transactions" t-as="trans">
+                                                        <tr>
+                                                            <td t-out="trans['name']"/>
+                                                            <td t-out="trans['fiscal_document_number']"/>
+                                                            <td t-out="trans['date']"/>
+                                                            <td t-out="trans['status']"/>
+                                                        </tr>
+                                                    </t>
+                                                </tbody>
+                                                <tfoot>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>FDN</th>
+                                                    <th>Transaction Date</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ Transactions Table  ] end -->
+                        </div>
+                    </div>
+                <!-- [ Main Content ] end -->
+
+                <footer class="pc-footer">
+                <div class="footer-wrapper container-fluid">
+                    <div class="row">
+                    <div class="col my-1">
+                        <p class="m-0"
+                        >Kola EFRIS &#9829; designed by <a href="https://kolapro.com/" target="_blank">Kola Technologies</a></p
+                        >
+                    </div>
+                    </div>
+                </div>
+                </footer> <!-- Required Js -->
+                <t t-call="wom_dashboard.onboarding_scripts"/>
+            </body>
+            <!-- [Body] end -->
+        </html>
+    </template>
+</odoo>

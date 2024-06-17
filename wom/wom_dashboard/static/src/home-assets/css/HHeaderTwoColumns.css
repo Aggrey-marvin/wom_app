@@ -1,0 +1,92 @@
+.h-header-two-cols[data-v-c67da0a0] {
+  padding: 76px 0 36px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .h-header-two-cols[data-v-c67da0a0] {
+    padding: 124px 0 80px;
+  }
+}
+@media (min-width: 1025px) {
+  .h-header-two-cols[data-v-c67da0a0] {
+    padding: 80px 0 96px;
+  }
+}
+.h-header-two-cols__wrapper[data-v-c67da0a0] {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1025px) {
+  .h-header-two-cols__wrapper[data-v-c67da0a0] {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.h-header-two-cols__left-col[data-v-c67da0a0] {
+  margin-bottom: 32px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .h-header-two-cols__left-col[data-v-c67da0a0] {
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 1025px) {
+  .h-header-two-cols__left-col[data-v-c67da0a0] {
+    margin-bottom: 0;
+    max-width: 456px;
+    width: 40.43%;
+  }
+}
+.h-header-two-cols__right-col[data-v-c67da0a0] {
+  width: 100%;
+}
+@media (min-width: 1025px) {
+  .h-header-two-cols__right-col[data-v-c67da0a0] {
+    max-width: 648px;
+    width: 57.45%;
+  }
+  .h-header-two-cols--sales .h-header-two-cols__left-col[data-v-c67da0a0] {
+    max-width: 456px;
+    width: 40.43%;
+  }
+}
+@media (min-width: 1367px) {
+  .h-header-two-cols--sales .h-header-two-cols__left-col[data-v-c67da0a0] {
+    width: 32.76%;
+  }
+}
+@media (min-width: 1025px) {
+  .h-header-two-cols--sales .h-header-two-cols__right-col[data-v-c67da0a0] {
+    max-width: 616px;
+    width: 54.61%;
+  }
+}
+@media (min-width: 1367px) {
+  .h-header-two-cols--sales .h-header-two-cols__right-col[data-v-c67da0a0] {
+    max-width: 762px;
+    width: 54.75%;
+  }
+}
+.h-header-two-cols--bg-ghost-white[data-v-c67da0a0] {
+  background-color: #fafbff;
+}
+.h-header-two-cols--bg-white-blue[data-v-c67da0a0] {
+  background-color: #f4f5ff;
+}
+.h-header-two-cols--bg-primary[data-v-c67da0a0] {
+  background-color: #673de6;
+}
+.h-header-two-cols--bg-primary-light[data-v-c67da0a0] {
+  background-color: #ebe4ff;
+}
+.h-header-two-cols--bg-black[data-v-c67da0a0] {
+  background-color: #000;
+}
+.h-header-two-cols--bg-meteorite-dark[data-v-c67da0a0] {
+  background-color: #2f1c6a;
+}
+.h-header-two-cols--bg-meteorite-light[data-v-c67da0a0] {
+  background-color: #d5dfff;
+}

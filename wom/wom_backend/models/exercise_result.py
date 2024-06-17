@@ -35,7 +35,7 @@ class ExcerciseResult(models.Model):
             self.create(exercise_data)
 
             # Getting the verdict
-            patient_age = datetime.now().year - patient.date_of_birth().year
+            patient_age = patient.age
             parameter_threshold = self.env['parameter.threshold'].search([
                 ('minimum_age', '<', patient_age),
                 ('maximum_age', '>', patient_age),

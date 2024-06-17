@@ -24,6 +24,7 @@ class Patient(models.Model):
         ('active', 'Active'),
         ('in_active', 'Inactive'),
     ], string="Status", default="in_active")
+    age = fields.Integer(string="Age")
 
     def search_user(self, vals):
         patient = self.env['patient'].search([('user_id', '=', vals.get('user_id'))])

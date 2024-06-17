@@ -34,10 +34,37 @@ class ExcerciseResult(models.Model):
 
             self.create(exercise_data)
 
+            # Getting the verdict
+            patient_age = datetime.now().year - patient.date_of_birth().year
+            parameter_threshold = self.env['parameter.threshold'].search([
+                ('minimum_age', '<', patient_age),
+                ('maximum_age', '>', patient_age),
+            ], limit=1, order="create_date DESC")
+
+            verdict = None
+            flex_range = vals.get('maxFlexAngle') - vals.get('minFlexAngle')
+
+            if parameter_threshold:
+                if vals.get('minFlexAngle') >= parameter_threshold.minimum_angle and\
+                    vals.get('minFlexAngle') <= (parameter_threshold.minimum_angle + 5) and\
+                        flex_range >= (parameter_threshold.normal_flexion_range - 5) and\
+                            flex_range >= (parameter_threshold.normal_flexion_range - 5):
+                    verdict = "veryGood"
+                elif not (vals.get('minFlexAngle') >= parameter_threshold.minimum_angle and\
+                    vals.get('minFlexAngle') <= (parameter_threshold.minimum_angle + 5)) and\
+                        flex_range >= (parameter_threshold.normal_flexion_range - 5) and\
+                            flex_range >= (parameter_threshold.normal_flexion_range - 5):
+                    verdict = "veryGood"
+                elif not (vals.get('minFlexAngle') >= parameter_threshold.minimum_angle and\
+                    vals.get('minFlexAngle') <= (parameter_threshold.minimum_angle + 5)) and\
+                        not (flex_range >= (parameter_threshold.normal_flexion_range - 5) and\
+                            flex_range >= (parameter_threshold.normal_flexion_range - 5)):
+                    verdict = "veryGood"
+
             # Getting past exercise records
             pass_exercise_data = self.env['exercise.result'].search([
                     ('patient_id', '=', patient.id),
-                    ('create_date', '>' (datetime.now() - timedelta(days=30)))
+                    ('create_date', '>' (datetime.now() - timedelta(days=30)).strftime('%Y-%m-%d %H:%M:%S'))
                 ], order="create_date ASC")
             
             flutter_exercise_data = []
@@ -55,7 +82,8 @@ class ExcerciseResult(models.Model):
 
             return {
                 "success": True,
-                "data": flutter_exercise_data
+                "data": flutter_exercise_data,
+                "verdict": verdict
             }
         
         else:

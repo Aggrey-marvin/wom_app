@@ -4,7 +4,7 @@ class ParameterThreshold(models.Model):
     _name = "parameter.threshold"
     _description = "Parameter Threshold"
 
-    minimum_angle = fields.Float(string="Mininum Angle")
-    maximum_angle = fields.Float(string="Maximum Angle")
-    exercise_id = fields.Many2one("exercise", string="Exercise")
-    
+    minimum_angle = fields.Float(string="Minimum Angle")
+    normal_flexion_range = fields.Float(string="Normal Flexion Range")
+    minimum_age = fields.Integer(string="Mininum Age")
+    maximum_age = fields.Integer(string="num Age")

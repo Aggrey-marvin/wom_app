@@ -163,6 +163,3 @@ class Patient(models.Model):
                 patient.write({
                     'state': 'in_active'
                 })
-        print("")
-        print("self", self.search([]))
-        print("")

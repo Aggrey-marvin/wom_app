@@ -52,6 +52,7 @@
                                     <field name="steps"></field>
                                     <field name="distance"></field>
                                     <field name="pain_score"></field>
+                                    <field name="exercise_id"></field>
                                 </tree>
                             </field>
                         </page>

@@ -133,7 +133,7 @@
                                                             <td t-out="exercise.distance"/>
                                                             <td t-out="exercise.pain_score"/>
                                                             <td t-out="exercise.exercise_id.name"/>
-                                                            <td t-out="exercise.duration"/>
+                                                            <td t-out="exercise.exercise_duration"/>
                                                             <td t-out="exercise.lowest_angle"/>
                                                             <td t-out="exercise.highest_angle"/>
                                                         </tr>

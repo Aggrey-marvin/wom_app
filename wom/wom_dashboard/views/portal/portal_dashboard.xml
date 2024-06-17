@@ -128,14 +128,14 @@
                                                 <tbody>
                                                     <t t-foreach="recent_exercises" t-as="exercise">
                                                         <tr>
-                                                            <td t-out="exercise.patient_id.user_id.name"/>
-                                                            <td t-out="exercise.steps"/>
-                                                            <td t-out="exercise.distance"/>
-                                                            <td t-out="exercise.pain_score"/>
-                                                            <td t-out="exercise.exercise_id.name"/>
-                                                            <td t-out="exercise.exercise_duration"/>
-                                                            <td t-out="exercise.lowest_angle"/>
-                                                            <td t-out="exercise.highest_angle"/>
+                                                            <td t-out="exercise.patient_id.user_id.name">John Doe</td>
+                                                            <td t-out="exercise.steps">0</td>
+                                                            <td t-out="exercise.distance">0</td>
+                                                            <td t-out="exercise.pain_score">0</td>
+                                                            <td t-out="exercise.exercise_id.name">Leg Raises</td>
+                                                            <td t-out="exercise.exercise_duration">0</td>
+                                                            <td t-out="exercise.lowest_angle">0</td>
+                                                            <td t-out="exercise.highest_angle">0</td>
                                                         </tr>
                                                     </t>
                                                 </tbody>

@@ -24,6 +24,7 @@
         'security/ir.model.access.csv',
         
         #------data files -------#
+        'data/cron.xml',
 
         #------report files -------#
 

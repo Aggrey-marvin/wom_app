@@ -2,7 +2,7 @@
 <odoo>
     <template id="portal_assets" name="Portal Assets">
         <head>
-            <title>Kola EFRIS | Customer Portal</title>
+            <title>WOM Portal</title>
             <!-- [Meta] -->
             <meta charset="utf-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"/>
@@ -14,7 +14,7 @@
             <!-- [Favicon] icon -->
             <link rel="stylesheet"  type="text/css" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css?v=1.00" />
             <!-- [Favicon] icon -->
-            <link rel="icon" href="/wom_dashboard/static/src/form-assets/images/kolafavicon.ico" type="image/x-icon" />
+            <link rel="icon" href="/wom_dashboard/static/src/form-assets/images/favicon.ico" type="image/x-icon" />
             <!-- [Font] Family -->
             <link rel="stylesheet"  type="text/css" href="/wom_dashboard/static/src/form-assets/fonts/inter/inter.css?v=1.00" id="main-font-link" />
             <!-- [Tabler Icons] https://tablericons.com -->

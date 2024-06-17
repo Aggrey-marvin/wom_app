@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import logging
+from datetime import datetime, timedelta
 
 from odoo import http
 from odoo.http import request
@@ -16,36 +17,23 @@ _logger = logging.getLogger(__name__)
 
 
 class MedicalPersonnelPortal(CustomerPortal):
-
-    @http.route(['/','/home'], auth='public')
-    def home_page(self, **kw):
-        qcontext = {}
-        products = request.env['product.template'].sudo().search([('categ_id.code','=','EFRIS'),('feature_line_ids','!=',False)],order='list_price asc')
-        uid = request.session.uid
-        currency = request.env['sale.order'].sudo().get_currency()
-        partner_id = False
-        if uid:
-            user = request.env['res.users'].sudo().search([('id','=',uid)])
-            if user:
-                partner_id = user.partner_id
-                qcontext['partner_id'] = partner_id.id
-       
-        qcontext['products'] = products
-        qcontext['currency'] = currency
-        _features= []
-        for prod in products:
-            features = request.env['product.feature.line'].sudo().search([("product_id","=",prod.id)]).mapped(lambda r: {"name":r.feature_id.name,"sequence":r.feature_id.sequence})
-            features = sorted(features, key=lambda x: x['sequence'])
-            _features.append({"id":prod.id,"features":[obj['name'] for obj in features]})
-
-        qcontext['features'] = _features
-
-        return http.request.render('kola_efris_frontend.home_page',qcontext)
     
     @http.route(['/my','/my/home'], auth='user')
     def home(self):
         qcontext = {}
         uid = request.session.uid
+
+        patients = request.env['patient'].sudo().search_count([])
+        active_patients = request.env['exercise.result'].search([
+            ('create_date', '>', (datetime.now() - timedelta(days=20)))
+        ]).mapped('patient_id')
+        completed_sessions = request.env['exercise.result'].search([])
+        recent_exercises = request.env['exercise.result'].search([], order="create_date DESC", limit=20)
+
+        qcontext['patients'] = patients
+        qcontext['active_patients'] = active_patients
+        qcontext['completed_sessions'] = completed_sessions
+        qcontext['recent_exercises'] = recent_exercises
 
         if uid:
             user = request.env['res.users'].sudo().browse(uid)

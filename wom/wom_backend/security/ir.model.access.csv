@@ -5,4 +5,6 @@ access_doctor,access_doctor,model_doctor,base.group_user,1,1,1,1
 
 access_exercise,access_exercise,model_exercise,base.group_user,1,1,1,1
 
+access_exercise_result,access_exercise_result,model_exercise_result,base.group_user,1,1,1,1
+
 access_parameter_threshold,access_parameter_threshold,model_parameter_threshold,base.group_user,1,1,1,1

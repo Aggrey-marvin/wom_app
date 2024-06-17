@@ -28,7 +28,11 @@
                             <field name="email"/>
                             <field name="date_of_birth"/>
                             <field name="doctor_id"/>
-                            <field name="address" optional="hide"/>
+                            <field name="address"/>
+                            <field name="state" widget="badge" 
+                                decoration-success="state == 'active'"
+                                decoration-danger="state == 'in_active'"
+                                />
                         </group>
                         <group name="info_2">
                             <field name="profile_picture" widget="image" class="oe_avatar" nolabel="1"

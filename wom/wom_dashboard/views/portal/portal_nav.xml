@@ -6,7 +6,7 @@
                 <div class="m-header">
                     <a href="/my" class="b-brand text-primary">
                         <!-- ========   Change your logo from here   ============ -->
-                        <img src="/wom_dashboard/static/src/form-assets/images/logo-dark.png" class="img-fluid portal-logo" alt="logo"/>
+                        <img src="/wom_dashboard/static/src/home-assets/images/wom-logo.jpeg" class="img-fluid portal-logo" alt="logo"/>
                     </a>
                 </div>
                 <div class="navbar-content">
@@ -29,7 +29,7 @@
                                     <use href="#custom-keyboard"></use>
                                     </svg>
                                 </span>
-                                <span class="pc-mtext">Transactions</span>
+                                <span class="pc-mtext">Patients</span>
                             </a>
                         </li>
                         <li class="pc-item pc-caption">

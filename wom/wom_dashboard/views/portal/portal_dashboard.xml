@@ -74,7 +74,7 @@
                                     <div class="col-md-6 col-xl-4">
                                         <div class="card social-widget-card bg-primary">
                                         <div class="card-body">
-                                            <h3 class="text-white m-0">0</h3>
+                                            <h3 class="text-white m-0" t-out="patients"></h3>
                                             <span class="m-t-10">Patients</span>
                                             <i class="fas fa-clinic-medical"></i>
                                         </div>
@@ -83,7 +83,7 @@
                                     <div class="col-md-6 col-xl-4">
                                         <div class="card social-widget-card bg-info">
                                         <div class="card-body">
-                                            <h3 class="text-white m-0">0</h3>
+                                            <h3 class="text-white m-0" t-out="len(active_patients)"></h3>
                                             <span class="m-t-10">Active Patients</span>
                                             <i class="fas fa-comment-medical"></i>
                                         </div>
@@ -92,7 +92,7 @@
                                     <div class="col-md-6 col-xl-4">
                                         <div class="card social-widget-card bg-danger">
                                         <div class="card-body">
-                                            <h3 class="text-white m-0">0</h3>
+                                            <h3 class="text-white m-0" t-out="len(completed_sessions)"></h3>
                                             <span class="m-t-10">Sessions Completed</span>
                                             <i class="fas fa-calendar-check"></i>
                                         </div>
@@ -115,10 +115,14 @@
                                             <table id="base-style" class="table table-striped table-bordered nowrap">
                                                 <thead>
                                                     <tr>
-                                                        <th>Name</th>
-                                                        <th>FDN</th>
-                                                        <th>Transaction Date</th>
-                                                        <th>Status</th>
+                                                        <th>Patient</th>
+                                                        <th>Steps</th>
+                                                        <th>Distance Walked</th>
+                                                        <th>Pain Score</th>
+                                                        <th>Exercise</th>
+                                                        <th>Duration</th>
+                                                        <th>Min Flex Angle</th>
+                                                        <th>Max Flex Angle</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -132,12 +136,16 @@
                                                     </t>
                                                 </tbody>
                                                 <tfoot>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>FDN</th>
-                                                    <th>Transaction Date</th>
-                                                    <th>Status</th>
-                                                </tr>
+                                                    <tr>
+                                                        <th>Patient</th>
+                                                        <th>Steps</th>
+                                                        <th>Distance Walked</th>
+                                                        <th>Pain Score</th>
+                                                        <th>Exercise</th>
+                                                        <th>Duration</th>
+                                                        <th>Min Flex Angle</th>
+                                                        <th>Max Flex Angle</th>
+                                                    </tr>
                                                 </tfoot>
                                             </table>
                                         </div>

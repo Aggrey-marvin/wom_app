@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 from odoo import fields, models
 
 class Patient(models.Model):
@@ -18,6 +20,10 @@ class Patient(models.Model):
     ], string="Gender")
     height = fields.Float(string="Height")
     weight = fields.Float(string="Weight")
+    state = fields.Selection(selection=[
+        ('active', 'Active'),
+        ('in_active', 'Inactive'),
+    ], string="Status", default="in_active")
 
     def search_user(self, vals):
         patient = self.env['patient'].search([('user_id', '=', vals.get('user_id'))])
@@ -43,6 +49,7 @@ class Patient(models.Model):
                     'expected_duration': exercise.expected_duration,
                     'exercise_gif': exercise.exercise_gif,
                     'exercise_image': exercise.exercise_image,
+                    'exercise_id': exercise.id
                 })
 
             patient_dict['exercises'] = exercise_list
@@ -80,3 +87,27 @@ class Patient(models.Model):
             }
         }
         return patient_dict
+    
+
+    # --------------------------------------------------------------------------------------------------
+    #                                   CRON METHODS    
+    # --------------------------------------------------------------------------------------------------
+
+    def cron_update_patient_status(self):
+        for patient in self.search([]):
+            exercise_session = self.env['exercise.result'].search([
+                ('patient_id', '=', patient.id),
+                ('create_date', '>', (datetime.now() - timedelta(days=20))),
+            ])
+
+            if len(exercise_session) > 0:
+                patient.write({
+                    'state': 'active'
+                })
+            else: 
+                patient.write({
+                    'state': 'in_active'
+                })
+        print("")
+        print("self", self.search([]))
+        print("")

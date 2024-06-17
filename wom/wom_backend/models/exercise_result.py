@@ -10,3 +10,4 @@ class ExcerciseResult(models.Model):
     time = fields.Integer(string="Time")
     exercise_id = fields.Many2one("exercise", string="Exercise")
     pain_score = fields.Float(string="Pain Score")
+    patient_id = fields.Many2one('patient', string="Patient")

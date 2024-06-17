@@ -45,6 +45,17 @@
                             </group>
                         </group>
                     </group>
+                    <notebook>
+                        <page name="exercise_sessions" string="Exercise Sessions">
+                            <field name="exercise_session_ids">
+                                <tree>
+                                    <field name="steps"></field>
+                                    <field name="distance"></field>
+                                    <field name="pain_score"></field>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

@@ -25,6 +25,7 @@ class Patient(models.Model):
         ('in_active', 'Inactive'),
     ], string="Status", default="in_active")
     age = fields.Integer(string="Age")
+    exercise_session_ids = fields.One2many("exercise.result", string="Exercise Sessions")
 
     def search_user(self, vals):
         patient = self.env['patient'].search([('user_id', '=', vals.get('user_id'))])
@@ -75,13 +76,13 @@ class Patient(models.Model):
             flex_range = most_recent_exercise_data.highest_angle - most_recent_exercise_data.lowest_angle
 
             if parameter_threshold:
-                if vals.get('minFlexAngle') >= most_recent_exercise_data.lowest_angle and\
-                    vals.get('minFlexAngle') <= (most_recent_exercise_data.lowest_angle + 5) and\
+                if most_recent_exercise_data.lowest_angle >= most_recent_exercise_data.lowest_angle and\
+                    most_recent_exercise_data.lowest_angle <= (most_recent_exercise_data.lowest_angle + 5) and\
                         flex_range >= (parameter_threshold.normal_flexion_range - 5) and\
                             flex_range >= (parameter_threshold.normal_flexion_range - 5):
                     verdict = "veryGood"
-                elif not (vals.get('minFlexAngle') >= most_recent_exercise_data.lowest_angle and\
-                    vals.get('minFlexAngle') <= (most_recent_exercise_data.lowest_angle + 5)) and\
+                elif not (most_recent_exercise_data.lowest_angle >= most_recent_exercise_data.lowest_angle and\
+                    most_recent_exercise_data.lowest_angle <= (most_recent_exercise_data.lowest_angle + 5)) and\
                         flex_range >= (parameter_threshold.normal_flexion_range - 5) and\
                             flex_range >= (parameter_threshold.normal_flexion_range - 5):
                     verdict = "good"

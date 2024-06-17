@@ -32,7 +32,7 @@
                                 <span class="pc-mtext">Patients</span>
                             </a>
                         </li>
-                        <li class="pc-item pc-caption">
+                        <!-- <li class="pc-item pc-caption">
                             <a href="/my/account" class="pc-link d-flex p-3 m-0">
                                 <span class="pc-micon">
                                     <svg class="pc-icon">
@@ -41,7 +41,7 @@
                                 </span>
                                 <span class="pc-mtext">My Account</span>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>

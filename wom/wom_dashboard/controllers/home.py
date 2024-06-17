@@ -25,7 +25,7 @@ class MedicalPersonnelPortal(CustomerPortal):
 
         patients = request.env['patient'].sudo().search_count([])
         active_patients = request.env['exercise.result'].search([
-            ('create_date', '>', (datetime.now() - timedelta(days=20)).strftime('%Y-%m-%d %H:%M:%S'))
+            ('create_date', '>', (datetime.now() - timedelta(days=20)))
         ]).mapped('patient_id')
         completed_sessions = request.env['exercise.result'].search([])
         recent_exercises = request.env['exercise.result'].search([], order="create_date DESC", limit=20)

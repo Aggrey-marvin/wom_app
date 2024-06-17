@@ -64,7 +64,7 @@ class ExcerciseResult(models.Model):
             # Getting past exercise records
             pass_exercise_data = self.env['exercise.result'].search([
                     ('patient_id', '=', patient.id),
-                    ('create_date', '>' (datetime.now() - timedelta(days=30)).strftime('%Y-%m-%d %H:%M:%S'))
+                    ('create_date', '>' (datetime.now() - timedelta(days=30)))
                 ], order="create_date ASC")
             
             flutter_exercise_data = []

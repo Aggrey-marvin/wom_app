@@ -86,8 +86,8 @@ class Patient(models.Model):
                         flex_range >= (parameter_threshold.normal_flexion_range - 5) and\
                             flex_range >= (parameter_threshold.normal_flexion_range - 5):
                     verdict = "good"
-                elif not (vals.get('minFlexAngle') >= most_recent_exercise_data.lowest_angle and\
-                    vals.get('minFlexAngle') <= (most_recent_exercise_data.lowest_angle + 5)) and\
+                elif not (most_recent_exercise_data.lowest_angle >= most_recent_exercise_data.lowest_angle and\
+                    most_recent_exercise_data.lowest_angle <= (most_recent_exercise_data.lowest_angle + 5)) and\
                         not (flex_range >= (parameter_threshold.normal_flexion_range - 5) and\
                             flex_range >= (parameter_threshold.normal_flexion_range - 5)):
                     verdict = "fair"

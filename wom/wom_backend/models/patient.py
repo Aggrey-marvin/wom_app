@@ -53,7 +53,60 @@ class Patient(models.Model):
                     'exercise_id': exercise.id
                 })
 
+            # Getting past exercise records
+            pass_exercise_data = self.env['exercise.result'].search([
+                    ('patient_id', '=', patient.id),
+                    ('create_date', '>', (datetime.now() - timedelta(days=30)).strftime('%Y-%m-%d %H:%M:%S'))
+                ], order="create_date ASC")
+            
+            most_recent_exercise_data = self.env['exercise.result'].search([
+                    ('patient_id', '=', patient.id),
+                    ('create_date', '>', (datetime.now() - timedelta(days=30)).strftime('%Y-%m-%d %H:%M:%S'))
+                ], order="create_date DESC", limit=1)
+            
+            # Getting the verdict
+            patient_age = patient.age
+            parameter_threshold = self.env['parameter.threshold'].search([
+                ('minimum_age', '<', patient_age),
+                ('maximum_age', '>', patient_age),
+            ], limit=1, order="create_date DESC")
+
+            verdict = None
+            flex_range = most_recent_exercise_data.highest_angle - most_recent_exercise_data.lowest_angle
+
+            if parameter_threshold:
+                if vals.get('minFlexAngle') >= most_recent_exercise_data.lowest_angle and\
+                    vals.get('minFlexAngle') <= (most_recent_exercise_data.lowest_angle + 5) and\
+                        flex_range >= (parameter_threshold.normal_flexion_range - 5) and\
+                            flex_range >= (parameter_threshold.normal_flexion_range - 5):
+                    verdict = "veryGood"
+                elif not (vals.get('minFlexAngle') >= most_recent_exercise_data.lowest_angle and\
+                    vals.get('minFlexAngle') <= (most_recent_exercise_data.lowest_angle + 5)) and\
+                        flex_range >= (parameter_threshold.normal_flexion_range - 5) and\
+                            flex_range >= (parameter_threshold.normal_flexion_range - 5):
+                    verdict = "good"
+                elif not (vals.get('minFlexAngle') >= most_recent_exercise_data.lowest_angle and\
+                    vals.get('minFlexAngle') <= (most_recent_exercise_data.lowest_angle + 5)) and\
+                        not (flex_range >= (parameter_threshold.normal_flexion_range - 5) and\
+                            flex_range >= (parameter_threshold.normal_flexion_range - 5)):
+                    verdict = "fair"
+            
+            flutter_exercise_data = []
+
+            for data in pass_exercise_data:
+                flutter_exercise_data.append({
+                    "date": data.create_date,
+                    "painScore": data.pain_score,
+                    "maxFlexAngle": data.highest_angle,
+                    "minFlexAngle": data.lowest_angle,
+                    "exerciseTime": data.time,
+                    "steps": data.steps,
+                    "distance": data.exercise_duration
+                })
+
             patient_dict['exercises'] = exercise_list
+            patient_dict['previousData'] = flutter_exercise_data
+            patient_dict['verdict'] = verdict
             return patient_dict
         else:
             return {

@@ -54,12 +54,12 @@ class ExcerciseResult(models.Model):
                     vals.get('minFlexAngle') <= (parameter_threshold.minimum_angle + 5)) and\
                         flex_range >= (parameter_threshold.normal_flexion_range - 5) and\
                             flex_range >= (parameter_threshold.normal_flexion_range - 5):
-                    verdict = "veryGood"
+                    verdict = "good"
                 elif not (vals.get('minFlexAngle') >= parameter_threshold.minimum_angle and\
                     vals.get('minFlexAngle') <= (parameter_threshold.minimum_angle + 5)) and\
                         not (flex_range >= (parameter_threshold.normal_flexion_range - 5) and\
                             flex_range >= (parameter_threshold.normal_flexion_range - 5)):
-                    verdict = "veryGood"
+                    verdict = "gair"
 
             # Getting past exercise records
             pass_exercise_data = self.env['exercise.result'].search([

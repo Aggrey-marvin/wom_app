@@ -60,6 +60,8 @@ class ExcerciseResult(models.Model):
                         not (flex_range >= (parameter_threshold.normal_flexion_range - 5) and\
                             flex_range >= (parameter_threshold.normal_flexion_range - 5)):
                     verdict = "gair"
+                else:
+                    verdict = "undefined"
 
             # Getting past exercise records
             pass_exercise_data = self.env['exercise.result'].search([

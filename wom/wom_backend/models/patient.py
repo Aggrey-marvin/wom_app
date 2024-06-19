@@ -34,11 +34,11 @@ class Patient(models.Model):
                 'success': True,
                 'data': {
                 'photo': patient.profile_picture if patient.profile_picture else self.env.company.default_image,
-                'gender': str(patient.gender).capitalize(),
-                'height': str(patient.height),
-                'weight': str(patient.weight),
+                'gender': str(patient.gender).capitalize() if patient.gender else 'male',
+                'height': str(patient.height) if patient.height else 180,
+                'weight': str(patient.weight) if patient.weight else 70,
                 'name': patient.user_id.name,
-                'contact': str(patient.user_id.phone)
+                'contact': str(patient.user_id.phone) if patient.user_id.phone else '07********'
                 }
             }
 

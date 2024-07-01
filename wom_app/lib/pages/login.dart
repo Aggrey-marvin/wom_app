@@ -155,6 +155,7 @@ class _LoginState extends State<Login> {
                             builder: (context) => NavigatorView(
                                   response: response,
                                   sessionData: session,
+
                                 )));
                       } else {
                         await orpc.destroySession();

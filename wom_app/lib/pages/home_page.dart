@@ -4,8 +4,10 @@ import 'package:fl_chart/fl_chart.dart';
 class Home extends StatefulWidget {
   final dynamic image;
   final dynamic name;
+  final dynamic response;
+  final dynamic verdict;
 
-  const Home({super.key, required this.image, this.name});
+  const Home({super.key, this.image, this.name, this.response, this.verdict});
 
   @override
   State<Home> createState() => _WomHomeState();
@@ -19,6 +21,75 @@ class _WomHomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+
+
+
+    print ('This is the verdict ${widget.verdict}');
+
+    print('This is the response ${widget.response}');
+
+    // List<FlSpot> ourSpots(){
+    //   List<FlSpot> spots = [];
+    //   print('This is our spots $spots');
+    //   double flexAngle;
+    //
+    //   for(var index in widget.response){
+    //
+    //     // flexAngle = widget.response[index]['maxFlexAngle'] - widget.response[index]['minFlexAngle'];
+    //     // double x = flexAngle;
+    //     // double y = widget.response[index]['date'];
+    //
+    //     spots.add(FlSpot(x, y));
+    //   }
+    //   return spots;
+    // }
+
+    // void showList(){
+
+    // print('This is our minFlexAngle  : ${widget.response[2]['minFlexAngle']}');
+    //   for(var index in widget.response){
+    //     print('This is our list ${widget.response[1]}');
+    //   }
+    // // }
+      int length = widget.response.length;
+
+      print('This is the length $length');
+      List<FlSpot> ourSpots() {
+        List<FlSpot> spots = [];
+        double flexAngle;
+        int dateIndex = 0;
+        for (int i = 0; i < length; i++) {
+          flexAngle = widget.response[i]['maxFlexAngle'] - widget.response[i]['minFlexAngle'];
+          double x = flexAngle;
+          // String y = widget.response[i]['date'].toString();
+          // double y = widget.response[i]['maxFlexAngle'];
+          double y = dateIndex.toDouble();
+
+          spots.add(FlSpot(y, x));
+          dateIndex++;
+        }
+        return spots;
+      }
+
+
+    // List<FlSpot> generateSpotsFromResponse() {
+    //   List<FlSpot> spots = [];
+    //   // if (widget.response!= null && widget.response is Map<String, dynamic>) {
+    //     for (var key in widget.response.keys) {
+    //       var value = widget.response[key];
+    //       if (value is Map<String, dynamic>) {
+    //         double flexAngle = value['maxFlexAngle'] - value['minFlexAngle'];
+    //         double x = value['date'];
+    //         double y = flexAngle;
+    //
+    //         print('This is the flex angle $flexAngle');
+    //         spots.add(FlSpot(x, y));
+    //       }
+    //     }
+    //   // }
+    //   return spots;
+    // }
+
     // Get the screen dimensions
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
@@ -88,7 +159,7 @@ class _WomHomeState extends State<Home> {
                     const SizedBox(height: 16),
 
                     Text(
-                      "70 degrees",
+                      widget.response[3]['maxFlexAngle'].toString(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -125,7 +196,8 @@ class _WomHomeState extends State<Home> {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      "800 Steps",
+                      // widget.response['steps'],
+                      widget.response![0]['steps'].toString(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -188,14 +260,7 @@ class _WomHomeState extends State<Home> {
               LineChartData(
                 lineBarsData: [
                   LineChartBarData(
-                      spots: const [
-                        FlSpot(0, 0),
-                        FlSpot(1, 1),
-                        FlSpot(2, 1),
-                        FlSpot(3, 4),
-                        FlSpot(4, 5),
-                        FlSpot(5, 2),
-                      ],
+                      spots: ourSpots(),
                       color: Colors.cyan[900]
                   ),
                 ],

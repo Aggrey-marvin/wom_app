@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:odoo_rpc/odoo_rpc.dart';
 import 'package:wom_app/pages/exercise/exercise_list.dart';
-
+import 'package:wom_app/pages/home_page.dart';
+import 'dart:convert'; // For base64 decoding
+import 'dart:typed_data';
 import '../providers/steps_provider.dart';
 
 
@@ -19,6 +21,8 @@ class PainScore extends ConsumerStatefulWidget {
   final dynamic response;
   final dynamic sessionData;
 
+
+
   @override
   ConsumerState<PainScore> createState() => _PainScoreState();
 }
@@ -28,7 +32,7 @@ class _PainScoreState extends ConsumerState<PainScore> {
 
   Future saveUserData(int userId, double minFlexAngle,
       double maxFlexAngle, double steps, double distance, double painScore,
-      int exerciseTime, String exerciseName
+      int exerciseTime, int exerciseName
       ) async{
     final orpc = OdooClient('http://138.201.186.0:8069/');
     const String databaseName = 'wom-live';
@@ -134,27 +138,12 @@ class _PainScoreState extends ConsumerState<PainScore> {
 
                     final double minFlexAngle = widget.minFlexAngle;
                     final double maxFlexAngle = widget.maxFlexAngle;
-                    final dynamic exerciseName = widget.exercise['name'];
+                    final int exerciseName = widget.exercise['exercise_id'];
                     final int exerciseTime = widget.exerciseTime;
                     final int userId = widget.sessionData.userId;
-                    final String userEmail = widget.sessionData.userLogin;
                     final double painScore = _value;
-                    final String userPassword = widget.response?['password'];
                     final steps = ref.watch(stepsProvider);
-                    final double distance = 0.0;
-
-                    // Map<String, dynamic> userData = {
-                    //   'userId' : userId,
-                    //   'minFlexAngle': minFlexAngle,
-                    //   'maxFlexAngle': maxFlexAngle,
-                    //   'steps': steps,
-                    //   'distance': distance,
-                    //   'painScore': painScore,
-                    //   'exerciseTime': exerciseTime,
-                    //   'exerciseName': exerciseName,
-                    // };
-                    //
-                    // print('This is the user data : $userData');
+                    final double distance = steps * 2.3;
 
 
                     var response = await saveUserData(userId, minFlexAngle, maxFlexAngle,
@@ -163,8 +152,11 @@ class _PainScoreState extends ConsumerState<PainScore> {
 
                     print('This is the exercise data $response');
 
+                    String base64Image = widget.response['data']['photo'] as String;
+                    Uint8List imageBytes = base64Decode(base64Image);
+
                     Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (ctx) => ExerciseView(exercises: widget.response['exercises'],))
+                        MaterialPageRoute(builder: (ctx) =>  ExerciseView(exercises: widget.response['exercises']))
                     );
                   },
                   style: ElevatedButton.styleFrom(

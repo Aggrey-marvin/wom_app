@@ -34,7 +34,7 @@ class _NavigatorViewState extends State<NavigatorView> {
 
       _pages = <Widget>[
         Home(
-          image: imageBytes, name: name,
+          image: imageBytes, name: name, response: widget.response['previousData'], verdict: widget.response['verdict']
         ),
         BlueScan(exercises: widget.response['exercises'], response: widget.response, sessionData: widget.sessionData),
         Profile(
